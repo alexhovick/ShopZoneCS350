@@ -1,4 +1,4 @@
-# Code - Mark Seaman
+# Code - Alex Hovick
 
 **Programmer Responsibilities**
 

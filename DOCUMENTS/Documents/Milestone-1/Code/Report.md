@@ -1,6 +1,6 @@
 # Engineering Report
 
-## Milestone 1 - Code - Mark Seaman
+## Milestone 1 - Code - Alex Hovick
 
 * What did I do?
     * I experimented with different forms of documentation for the project
