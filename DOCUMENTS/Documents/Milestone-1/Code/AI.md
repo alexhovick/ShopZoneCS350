@@ -7,7 +7,7 @@ Things I learned from ChatGPT
 ...  Response Omitted ...
 
 
-## How do I create a new Django Project?
+## How do I create a new React Project?
 
 To create a new Django project, you can follow these steps:
 
