@@ -15,9 +15,9 @@
 - User Guide for development workflow
 
 
-**Ghost Writer Github Repo**
+**ShopZone Github Repo**
 
-* [Github Repo for Ghost Writer](Index.md)
+* [Github Repo for ShopZone](Index.md)
     * [Setup Github account](GithubRepo.md)
     * [Setup Github Pages repository](Documents.md)
     * [Build app code directory structure](AppCode.md)
