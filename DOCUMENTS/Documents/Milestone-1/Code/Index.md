@@ -20,7 +20,7 @@
 * [Github Repo for ShopZone](Index.md)
     * [Setup Github account](GithubRepo.md)
     * [Setup Github Pages repository](Documents.md)
-    * [Build app code directory structure](AppCode.md)
+    * [Build app code directorfy structure](AppCode.md)
     * [User Guide for development workflow](Workflow.md)
 * [Engineering Report](Report.md)
     * What did I do?
