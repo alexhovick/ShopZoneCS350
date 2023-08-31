@@ -7,7 +7,7 @@ Choose the technology to use for the project.
 
 ### Web Framework and Language
 
-I selected Django because I have years of experience using it.
+I selected React.js because it was the only web framework that someone in our group has used.
 
 
 ### Status Video 
