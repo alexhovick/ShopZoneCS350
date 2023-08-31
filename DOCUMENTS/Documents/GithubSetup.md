@@ -12,7 +12,6 @@ Go to the [GitHub website](https://github.com/) using your preferred web browser
 
 ## 3. Choose the Free Plan
 
-- Choose a plan based on your needs:
   - **Free Plan:** This plan provides basic features and unlimited public repositories.
 
 ## 4. Provide Your Username and Email
