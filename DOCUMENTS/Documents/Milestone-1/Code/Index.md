@@ -30,5 +30,5 @@
 * [AI Playbook](AI.md)
     - Explain how to Setup Github account
     - Use markdown files in Github for documentation
-    - Build app code directory structure for Django app
-    - Write a User Guide for development workflow for Django
+    - Build app code directory structure for React app
+    - Write a User Guide for development workflow for React
