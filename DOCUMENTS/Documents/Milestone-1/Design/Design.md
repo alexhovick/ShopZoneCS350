@@ -7,8 +7,8 @@ Choose the technology to use for the project.
 
 ### Web Framework and Language
 
-I selected React.js because it was the only web framework that someone in our group has used.
-
+I selected React.js because it was the only web framework that someone in our group has used. IT also appears to have a lot of nice features for web development.
+The JSX language that react created also seems to have an easy learning curve.
 
 ### Status Video 
 
