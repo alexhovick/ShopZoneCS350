@@ -18,8 +18,8 @@
 **ShopZone Github Repo**
 
 * [Github Repo for ShopZone](../../Index.md)
-    * [Setup Github account](../../GithubRepo.md)
-    * [Setup Github Pages repository](../../../DOCUMENTS)
+    * [Setup Github account](../../GithubSetup.md)
+    * [Setup Github Pages repository](../../GithubRepo.md)
     * [Build app code directordy structure](../../AppCode.md)
     * [User Guide for development workflow](../../Workflow.md)
 * [Engineering Report](Report.md)
