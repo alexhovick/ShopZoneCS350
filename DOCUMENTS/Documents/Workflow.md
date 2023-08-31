@@ -29,10 +29,10 @@ Before you begin, make sure your development environment is set up:
 Our team uses Git for version control:
 
 1. Clone the repository:
-git clone https://github.com/alexhovick/ShopZoneCS350.git
+## git clone https://github.com/alexhovick/ShopZoneCS350.git
 
 2. Create a new feature branch:
-git checkout -b feature/your-feature-name
+## git checkout -b feature/your-feature-name
 
 
 3. Commit your changes:
