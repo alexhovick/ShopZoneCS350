@@ -9,5 +9,3 @@ Here's how our project's files and directories are organized:
 - **images/**: This directory holds our image assets.
 - **index.html**: The main HTML file of our project.
 - **README.md**: Information about our project.
-
-[Link to App Code](AppCode.md)
