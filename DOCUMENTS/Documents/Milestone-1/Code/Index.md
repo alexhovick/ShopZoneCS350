@@ -17,11 +17,11 @@
 
 **ShopZone Github Repo**
 
-* [Github Repo for ShopZone](../../Index.md)
-    * [Setup Github account](../../GithubSetup.md)
-    * [Setup Github Pages repository](../../GithubRepo.md)
-    * [Build app code directordy structure](../../AppCode.md)
-    * [User Guide for development workflow](../../Workflow.md)
+* [Github Repo for ShopZone](link.md)
+    * [Setup Github account](GithubSetup.md)
+    * [Setup Github Pages repository](GithubRepo.md)
+    * [Build app code directordy structure](AppCode.md)
+    * [User Guide for development workflow](Workflow.md)
 * [Engineering Report](Report.md)
     * What did I do?
     * What will I do?
