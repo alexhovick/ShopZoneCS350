@@ -76,11 +76,11 @@ Click the "Deploy site" button in the Netlify dashboard. Netlify will initiate t
 
 You can configure a custom domain for your site in the Netlify dashboard if you have one.
 
-9.Continuous Deployment:
+9. Continuous Deployment:
 
 Netlify supports continuous deployment, which means whenever you push changes to your Git repository, Netlify will automatically build and deploy the updated app.
 
-10.Testing and Monitoring:
+10. Testing and Monitoring:
 
 After deployment, thoroughly test your app to ensure it works correctly on Netlify. You can also set up monitoring and analytics tools through Netlify if needed.
 

@@ -18,3 +18,5 @@
     * Our team met for 6 hours 
 * 5-minute Video Demo
     * Added under Video Folder
+    * [Video](Video.md)
+    
