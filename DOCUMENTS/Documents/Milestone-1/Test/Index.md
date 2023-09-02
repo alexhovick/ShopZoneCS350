@@ -15,13 +15,13 @@
 - Write deployment guide for dev team
 
 
-**Ghost Writer Application Hosting**
+**ShopZone Application Hosting**
 
-* [Github Repo for Ghost Writer](Index.md)
-    * [Select a hosting service provider](Hosting.md)
-    * [Create a simple app at hosting provider](DigitalOcean.md)
-    * [Register app server URL with client](ClientURL.md)
-    * [Write deployment guide for dev team](Deploy.md)
+* [Github Repo for ShopZone](Index.md)
+    * [Select a hosting service provider](Index.md)
+    * [Create a simple app at hosting provider](Index.md)
+    * [Register app server URL with client](Index.md)
+    * [Write deployment guide for dev team](Index.md)
 * [Engineering Report](Report.md)
     * What did I do?
     * What will I do?
