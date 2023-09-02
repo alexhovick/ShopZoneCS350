@@ -1,0 +1,1 @@
+### We will be using https://www.netlify.com/ for our web hosting

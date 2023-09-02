@@ -1,17 +1,19 @@
 # Engineering Report
 
-## Milestone 1 - Design - Mark Seaman
+## Milestone 1 - Design - Seth Hatch
 
 * What did I do?
-    * Decided on technology and tools for Ghost Writer
+    * Decided on technology and tools for ShopZone
     * Setup dev tools and train team
     * Work with team
+    * Created application code for "Hello World"
 * What will I do?  Design for Milestone 2
-    * Integrate Open AI into app
+    * Show proof point of technology by developing a prototype of ShopZone's home page.
+    * Develop the software architecture.
 * What challenges do I have?
-    * Need to get an Open AI key
+    * Developing the software architecture for our application
 * Engineering investment
-    * I spent about 10 hours on Design for Milestone 1
-    * Our team met for 0 hours (I'm working alone) 
+    * I spent about 8 hours on Design for Milestone 1
+    * Our team met for 6 hours
 * 5-minute Video Demo
-    * I may record a video later but am skipping it for now
+    * 

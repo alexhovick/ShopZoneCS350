@@ -68,7 +68,7 @@ As of my last knowledge update in September 2021, four of the most popular web f
 Please note that the popularity of frameworks can change over time, and new frameworks might have gained traction since my last update. It's always a good idea to research the latest trends and assess the frameworks that best suit your project's requirements.
 
 
-## How can I choose a web framework?
+## How should I decided what web framework I should use?
 
 Choosing the right web framework for your project depends on various factors. Here's a step-by-step guide to help you decide which web framework to use:
 
@@ -153,3 +153,132 @@ JSX, React's syntax extension, can initially seem strange if you're not used to 
 React Hooks are a newer addition to React that allows you to manage state and side effects in functional components. While they simplify some aspects of React development, they might also introduce new concepts to learn.
 
 In summary, if you have a strong foundation in JavaScript and are open to learning a few new concepts, React should be relatively straightforward to pick up. The learning curve might be steeper if you're new to programming or have limited experience with JavaScript, but with practice and dedication, you can become proficient in React and start building dynamic and interactive web applications.
+
+
+## Write a guide into how to setup a React app
+
+Setting up a React app is a great way to start building modern web applications. React is a popular JavaScript library for creating user interfaces. Here's a step-by-step guide to help you set up a basic React app:
+
+#### Prerequisites:
+
+1. #### Node.js and npm: 
+Make sure you have Node.js (which includes npm, the Node Package Manager) installed on your system. You can download it from the official Node.js website: https://nodejs.org/
+
+#### Step 1: Create a New React App
+
+1. #### Using Create React App:
+The easiest way to set up a new React app is by using create-react-app, a tool that sets up a new project with all the necessary configuration preconfigured.
+Open your terminal and run the following command to create a new React app:
+
+    npx create-react-app your-app-name
+
+Replace your-app-name with the desired name of your app.
+
+2. #### Navigate to the App Directory:
+After the app is created, navigate to the app directory using the following command:
+
+    cd your-app-name
+
+#### Step 2: Explore the Project Structure
+Once your app is created, you'll see a basic project structure with the following key files and directories:
+
+* src/: This is where your application's source code resides.
+* public/: Static assets like HTML files, images, etc., are placed here.
+* package.json: Contains information about the app and its dependencies.
+* App.js: The main React component that represents your app.
+* index.js: The entry point of your app where React is rendered.
+
+#### Step 3: Run the Development Server
+
+1. #### Start the Development Server:
+In the terminal, run the following command to start the development server:
+
+    npm start
+
+This will launch your app in your default web browser. It will also automatically reload whenever you make changes to your code.
+
+#### Step 4: Build and Deploy
+
+1. #### Building for Production:
+When you're ready to deploy your app, you need to build it for production. Run the following command:
+
+    npm run build
+This creates an optimized production build in the build/ directory.
+
+2. #### Deploying:
+You can deploy your app to various platforms like Netlify, Vercel, GitHub Pages, or your own hosting. Consult the documentation of the platform you choose for deployment instructions.
+
+#### Step 5: Writing Your App
+Now that your app is set up, you can start writing your React components in the src/ directory. Open src/App.js to see the default component. You can create additional components in separate files within the src/ directory.
+
+From here, you can explore the React documentation (https://reactjs.org/docs/getting-started.html) and various online tutorials to learn how to build more complex features and functionalities in your React app.
+
+Remember that this guide covers the basics of setting up a React app. As you become more comfortable with React, you'll discover additional tools, libraries, and patterns that can enhance your development process.
+
+
+## Give an overview over some JSX basics
+
+Certainly! Here's an overview of some JSX basics:
+
+#### 1. JSX Syntax:
+JSX allows you to write HTML-like code within your JavaScript. It's not actual HTML, but a syntax extension that gets transpiled into JavaScript code that browsers can understand. JSX elements resemble HTML elements.
+
+    const element = <h1>Hello, JSX!</h1>;
+
+#### 2. Embedding Expressions:
+You can embed JavaScript expressions within JSX using curly braces {}. This allows you to insert dynamic values and variables into your JSX elements.
+
+    const name = "Alice";
+    const greeting = <p>Hello, {name}!</p>;
+
+#### 3. JSX and HTML Differences:
+While JSX resembles HTML, there are a few key differences:
+
+* You use className instead of class for adding CSS classes to elements.
+* Self-closing tags must end with a slash, like &lt;br />.
+* JSX attributes are camelCase, like onClick and onChange.
+* JSX doesn't support some HTML attributes like for (use htmlFor instead) and style expects an object with camelCase properties.
+
+#### 4. JSX Elements as Expressions:
+JSX elements can be treated as expressions. You can store them in variables, return them from functions, and use them just like you would with any other JavaScript value.
+
+    const header = <h1>Hello, JSX!</h1>;
+
+    function getGreeting(name) {
+        return <p>Hello, {name}!</p>;
+    }
+
+#### 5. Rendering JSX:
+To render JSX elements to the DOM, you typically use ReactDOM.render() from the react-dom package. You provide the JSX element you want to render and a DOM element where it should be rendered.
+
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+
+    const element = <h1>Hello, JSX!</h1>;
+    ReactDOM.render(element, document.getElementById('root'));
+
+#### 6. Components and JSX:
+Components are the building blocks of a React application. You can create custom components using JSX. A component can return JSX, which can include other components.
+
+    import React from 'react';
+
+    function Greeting(props) {
+        return <p>Hello, {props.name}!</p>;
+    }
+
+#### 7. Fragments:
+If you want to return multiple adjacent JSX elements from a component without introducing an additional parent element, you can use fragments. Fragments allow you to group elements without adding extra nodes to the DOM.
+
+
+    import React from 'react';
+
+    function MyComponent() {
+        return (
+        <>
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+        </>
+        );
+    }
+
+These are some of the basic concepts of JSX. JSX makes working with React and creating dynamic user interfaces more intuitive and efficient by allowing you to combine JavaScript and HTML-like syntax in a single file.
