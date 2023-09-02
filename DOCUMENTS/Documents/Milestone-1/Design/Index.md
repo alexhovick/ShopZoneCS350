@@ -27,7 +27,9 @@
     * What challenges do I have?
     * Engineering investment
 * [AI Playbook](AI.md)
-    - Select a web framework and development tools for Ghost Writer
-    - Write a Setup Guide for Development Tools
-    - Write a simple app using Django
-    - Recommend four web hosting services for Django applications
+    - What are the most popular web development tools?
+    - What are the four most popular web frameworks?
+    - How should I decided what web framework I should use?
+    - How easy is it to learn react
+    - Write a guide into how to setup a React app
+    - Give an overview over some JSX basics
