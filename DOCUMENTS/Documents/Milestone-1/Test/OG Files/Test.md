@@ -1,4 +1,4 @@
-# Milestone 1 - Test - Elmore Siahaan
+# Milestone 1 - Test 
 
 Setup the initial web hosting for the project.
 
@@ -7,9 +7,9 @@ Setup the initial web hosting for the project.
 
 ### Web Hosting
 
-I Selected Netlify for hosting our React app.
+I Selected Digital Ocean for hosting my Django app using App Platform.
 
-[ShopZone Hosting](https://clever-cucurucho-a93faa.netlify.app/)
+[Ghost Writer Hosting](https://seamanslog.com/pubs/blog)
 
 
 ### Status Video 
@@ -28,6 +28,4 @@ Develop a comprehensive test plan (including Web Testing, System Testing, Unit T
 Need to do Git Pull and Git Push on server.
 
 Need to set up new database for production.
-
-Need to set up configurations for dynamic site at Netlify.
 
