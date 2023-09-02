@@ -10,16 +10,17 @@ Make sure you have Node.js (which includes npm, the Node Package Manager) instal
 
 1. #### Using Create React App:
 The easiest way to set up a new React app is by using create-react-app, a tool that sets up a new project with all the necessary configuration preconfigured.
-Open your terminal and run the following command to create a new React app:
+Open your terminal(this can be the VSCode terminal) and run the following command to create a new React app:
 
     npx create-react-app your-app-name
 
 Replace your-app-name with the desired name of your app.
 
 2. #### Navigate to the App Directory:
-After the app is created, navigate to the app directory using the following command:
+After the app is created, navigate to the app directory and open the app in VSCode using the following commands:
 
     cd your-app-name
+    code .
 
 #### Step 2: Explore the Project Structure
 Once your app is created, you'll see a basic project structure with the following key files and directories:
@@ -38,6 +39,8 @@ In the terminal, run the following command to start the development server:
     npm start
 
 This will launch your app in your default web browser. It will also automatically reload whenever you make changes to your code.
+If you are on Windows 10 you might run into an error where you will receive an error when trying to start the application.
+All you need to no is open the package.json file is VSCode and save it (ctrl+s). You may need to do this everytime you save a change and reload the page.
 
 #### Step 4: Build and Deploy
 
