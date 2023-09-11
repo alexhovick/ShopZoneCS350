@@ -1,2 +1,4 @@
 # READ ME
-# So a blind man walks into a bar...
+# What did yoda say when he saw himself in 4k?
+
+#   HDMI
