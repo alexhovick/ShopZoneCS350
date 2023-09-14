@@ -12,7 +12,7 @@ url = "https://shopzone-app.netlify.app"
 # Send an HTTP GET request to the URL
 response = requests.get(url)
 
-# Check if the request was successful (status code 200)
+# Check if the request was successful (status code 200 means that the page works)
 if response.status_code == 200:
     # Parse the HTML content of the page
     soup = BeautifulSoup(response.text, 'html.parser')
