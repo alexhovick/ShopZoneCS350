@@ -1,13 +1,7 @@
-import React from 'react';
-import Header from '../components/Header.jsx';
-
-const Login = () => {
-    return (
-        <div>
-          <Header />
-          Login Page
-        </div>
-      );
-}
+const Login = () => (
+  <div className="font-bold text-3xl text-white text-center">
+    Login Page
+  </div>
+);
 
 export default Login;

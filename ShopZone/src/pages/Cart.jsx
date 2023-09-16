@@ -1,13 +1,7 @@
-import React from 'react';
-import Header from '../components/Header.jsx';
-
-const Cart = () => {
-    return (
-      <div>
-        <Header />
-        Cart Page
-      </div>
-    );
-  }
+const Cart = () => (
+  <div className="font-bold text-3xl text-white text-center">
+    Cart Page
+  </div>
+)
 
 export default Cart;

@@ -18,7 +18,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search products..."
-            className="w-full px-4 py-2 rounded-md"
+            className="w-full px-4 py-2 rounded-md text-black"
           />
         </div>
 
