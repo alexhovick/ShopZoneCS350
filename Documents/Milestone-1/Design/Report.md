@@ -16,4 +16,4 @@
     * I spent about 8 hours on Design for Milestone 1
     * Our team met for 6 hours
 * 5-minute Video Demo
-    * 
+    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://tella.video/seths-video-223u" allowfullscreen allowtransparency></iframe>
