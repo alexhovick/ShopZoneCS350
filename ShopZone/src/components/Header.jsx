@@ -9,7 +9,7 @@ const Header = () => {
     <header className="bg-gray-800 text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo - Takes you to the home page */}
-        <Link to="/" className="text-2xl font-bold">
+        <Link to="/" className="text-2xl font-bold hover:border mx-4">
           ShopZone
         </Link>
 
@@ -23,12 +23,12 @@ const Header = () => {
         </div>
 
         {/* Login Button - Takes you to the login page */}
-        <Link to="/login" className="hover:underline">
+        <Link to="/login" className="text-xl hover:border">
           Login
         </Link>
 
         {/* Cart Button - Takes you to the cart page */}
-        <Link to="/cart" className="ml-4">
+        <Link to="/cart" className="ml-4 hover:border">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
