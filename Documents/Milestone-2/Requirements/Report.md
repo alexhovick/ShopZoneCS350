@@ -24,4 +24,4 @@
     * I spent about 8 hours on Requirements for Milestone 2
     * Our team met for 6 hours 
 * 5-minute Video Demo
-    * Added under Video Folder - Requirements 
+    * Added in Video Folder and [here](Video.md)
