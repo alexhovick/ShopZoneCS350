@@ -1,4 +1,3 @@
 # READ ME
-# What did yoda say when he saw himself in 4k?
-
-#   HDMI
+# SOURCE CODE FOR SHOPZONE ( AN AMAZON BASED APP)
+# BY CS350-BackEnd Group
