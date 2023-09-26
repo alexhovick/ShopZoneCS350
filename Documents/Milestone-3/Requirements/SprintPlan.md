@@ -37,7 +37,21 @@ As a shopper, I want to review my order before finalizing the purchase.
         Time Expected:
 
         Time Taken:
-## Sprint 4: 
+
+## Sprint 4:
+As a user, I want to search for products by keyword.
+
+        Time Expected:
+
+        Time Taken:
+        
+As a shopper, I want to browse products by category.
+
+        Time Expected:
+
+        Time Taken:
+
+## Sprint 5: 
 As a new user, I want to create an account using my email.
 
         Time Expected:
@@ -50,7 +64,7 @@ As a new user, I want to enter my shipping address.
 
         Time Taken:
     
-## Sprint 5:
+## Sprint 6:
 As a registered user, I want to view and edit my profile information.
 
         Time Expected:
@@ -69,25 +83,13 @@ As a registered user, I want to reset my password if I forget it.
 
         Time Taken:
 
-## Sprint 6:
+## Sprint 7:
 As a returning user, I want to log in with my username and password.
 
         Time Expected:
 
         Time Taken:
 
-## Sprint 7:
-As a user, I want to search for products by keyword.
-
-        Time Expected:
-
-        Time Taken:
-        
-As a shopper, I want to browse products by category.
-
-        Time Expected:
-
-        Time Taken:
 
 ## Sprint 8:
 As a buyer, I want to track the status of my orders.
