@@ -1,3 +1,6 @@
+# Current Velocity: 0.375 Features per Hour
+# Estimated Velocity: 0.377 Features per Hour
+
 # Milestone 2: 13 Hours Expected
 ## Sprint 1: 
 As a shopper, I want to view product details, including images, descriptions, and prices.
