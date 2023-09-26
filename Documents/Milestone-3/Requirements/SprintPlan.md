@@ -113,7 +113,7 @@ As a shopper, I want to add products to my wishlist.
 
         Time Taken:
 
-    As a user, I want to view and manage the items in my wishlist.
+As a user, I want to view and manage the items in my wishlist.
 
         Time Expected:
 
