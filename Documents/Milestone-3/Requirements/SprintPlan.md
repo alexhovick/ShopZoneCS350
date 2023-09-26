@@ -1,25 +1,41 @@
+# Milestone 2
 ## Sprint 1: 
 As a shopper, I want to view product details, including images, descriptions, and prices.
 
-        Time Expected:
+        Time Expected: 2 Hours
 
-        Time Taken:
+        Time Taken: 2 Hours
 
 
 ## Sprint 2:
 As a shopper, I want to add products to my cart.
 
-        Time Expected:
+        Time Expected: 5 Hours
 
-        Time Taken:
+        Time Taken: 5 Hours
     
 As a shopper, I want to remove items from my cart.
 
+        Time Expected: 1 Hour
+
+        Time Taken: 1 Hour
+
+# Milestone 3
+## Sprint 3:
+As a user, I want to search for products by keyword.
+
+        Time Expected: 
+
+        Time Taken:
+        
+As a shopper, I want to browse products by category.
+
         Time Expected:
 
         Time Taken:
 
-## Sprint 3: 
+# Milestone 4
+## Sprint 4: 
 As a shopper, I want to proceed to checkout from the cart.
 
         Time Expected:
@@ -38,19 +54,7 @@ As a shopper, I want to review my order before finalizing the purchase.
 
         Time Taken:
 
-## Sprint 4:
-As a user, I want to search for products by keyword.
-
-        Time Expected:
-
-        Time Taken:
-        
-As a shopper, I want to browse products by category.
-
-        Time Expected:
-
-        Time Taken:
-
+# Milestone 5
 ## Sprint 5: 
 As a new user, I want to create an account using my email.
 
@@ -90,7 +94,7 @@ As a returning user, I want to log in with my username and password.
 
         Time Taken:
 
-
+# Milestone 6
 ## Sprint 8:
 As a buyer, I want to track the status of my orders.
 
@@ -110,6 +114,7 @@ As a user, I want to receive an email confirmation after placing an order.
 
         Time Taken:
 
+# Milestone 7
 ## Sprint 9:
 As a shopper, I want to add products to my wishlist.
 
