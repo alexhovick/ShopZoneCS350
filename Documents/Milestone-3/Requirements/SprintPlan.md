@@ -106,7 +106,7 @@ Sprint 8:
 
         Time Taken:
 
-Sprint 9:
+## Sprint 9:
 As a shopper, I want to add products to my wishlist.
 
         Time Expected:
