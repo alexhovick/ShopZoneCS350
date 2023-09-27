@@ -5,11 +5,11 @@
 1. As a shopper, I want to view product details, including images, descriptions, and prices.
 2. As a shopper, I want to add products to my cart.
 3. As a shopper, I want to remove items from my cart.
-4. As a shopper, I want to proceed to checkout from the cart.
-5. As a shopper, I want to select my preferred payment method.
-6. As a shopper, I want to review my order before finalizing the purchase.
-7. As a user, I want to search for products by keyword.
-8. As a shopper, I want to browse products by category.
+4. As a user, I want to search for products by keyword.
+5. As a shopper, I want to browse products by category.
+6. As a shopper, I want to proceed to checkout from the cart.
+7. As a shopper, I want to select my preferred payment method.
+8. As a shopper, I want to review my order before finalizing the purchase.
 9. As a new user, I want to create an account using my email.
 10. As a new user, I want to enter my shipping address.
 11. As a registered user, I want to view and edit my profile information.
