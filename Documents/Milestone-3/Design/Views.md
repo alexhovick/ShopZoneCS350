@@ -16,7 +16,7 @@ function EditUserProfile({ userProfile }) {
   return (
     <div>
       <h1>Edit User Profile</h1>
-      {/* Implement a form here */}
+      {}
     </div>
   );
 }
@@ -26,7 +26,7 @@ function CreateUser() {
   return (
     <div>
       <h1>Create User Profile</h1>
-      {/* Implement a form here */}
+      {}
     </div>
   );
 }
@@ -37,7 +37,7 @@ function DeleteUserProfile({ userProfile }) {
     <div>
       <h1>Delete User Profile</h1>
       <p>Are you sure you want to delete {userProfile.firstName} {userProfile.lastName}'s profile?</p>
-      {/* Implement delete button and logic here */}
+      {}
     </div>
   );
 }
@@ -86,7 +86,7 @@ function EditProduct({ product }) {
   return (
     <div>
       <h1>Edit Product</h1>
-      {/* Implement a form here */}
+      {}
     </div>
   );
 }
@@ -96,7 +96,7 @@ function CreateProduct() {
   return (
     <div>
       <h1>Create Product</h1>
-      {/* Implement a form here */}
+      {}
     </div>
   );
 }
@@ -107,7 +107,7 @@ function DeleteProduct({ product }) {
     <div>
       <h1>Delete Product</h1>
       <p>Are you sure you want to delete the product: {product.name}?</p>
-      {/* Implement delete button and logic here */}
+      {}
     </div>
   );
 }
