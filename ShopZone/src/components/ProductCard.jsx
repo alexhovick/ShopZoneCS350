@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import {AiFillStar} from 'react-icons/ai'
 const ProductCard = ({ item, i }) => {
   return (
-    <Link to={`/Product/${item.asin}`} className="group block rounded-lg overflow-hidden shadow-md hover:shadow-xl">
+    <Link to={`/Product/${item?.asin}`} className="group block rounded-lg overflow-hidden shadow-md hover:shadow-xl">
       <div className='flex flex-col w-[400px] h-[350px] p-4 bg-white/10 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer'>
 
         <div className='relative w-full h-60 group'>
@@ -13,11 +13,10 @@ const ProductCard = ({ item, i }) => {
             {/* <p className='text-white text-bold'>{item.product_title} {item.product_price}</p> */}
             
           </div>
-          <img className='object-contain w-full h-full 'alt="product_img" src={item.product_photo} />
-          
+          <img className='object-contain w-full h-full 'alt="product_img" src={item?.product_photo} />
           <div className='mt-4 flex flex-col'>
-            <p className='text-white text-bold'>{item.product_title} -  {item.product_price}</p>
-            <p className='text-white items-center flex'> <AiFillStar/> <AiFillStar/> <AiFillStar/> <AiFillStar/> <AiFillStar/>  &nbsp; {item.product_star_rating} </p>
+            <p className='text-white text-bold'>{item?.product_title} -  {item?.product_price}</p>
+            <p className='text-white items-center flex'> <AiFillStar/> <AiFillStar/> <AiFillStar/> <AiFillStar/> <AiFillStar/>  &nbsp; {item?.product_star_rating} </p>
           </div>
           
         </div>

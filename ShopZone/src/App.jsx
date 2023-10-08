@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
-import { Header } from './components';
+import { Header, SearchBar } from './components';
 import { Cart, Checkout, Home, Login, ProductDetails, SearchResults} from './pages';
 
 const App = () => {

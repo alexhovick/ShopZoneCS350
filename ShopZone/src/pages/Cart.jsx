@@ -1,101 +1,77 @@
-// src/pages/Cart.jsx
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateCartItemQuantity, removeCartItem } from '../redux/actions/cartActions';
+import { updateCartItemQuantity, removeCartItem, addToCart } from '../redux/actions/cartActions'; // Import addToCart action
 import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
 
 function Cart() {
-  const cart = useSelector((state) => state.cart);
-  //const cart = JSON.parse(JSON.stringify(cartData, null, 2));
-  console.log("cart: " +cart[0].product.product_title);
+  const cartData = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  const [successMessage, setSuccessMessage] = useState(null);
-
   const handleQuantityChange = (item, newQuantity) => {
-    dispatch(updateCartItemQuantity({ id: item.product.asin, quantity: newQuantity }));
-  }; 
+    dispatch(updateCartItemQuantity({ asin: item.product.asin, quantity: newQuantity }));
+  };
 
   const handleRemoveItem = (item) => {
     dispatch(removeCartItem(item.product.asin));
-    setSuccessMessage('Item removed successfully');
-    setTimeout(() => {
-      setSuccessMessage(null);
-    }, 2000); // Clear the message after 2 seconds    
   };
 
-  //const cartTotal = cart.reduce((total, item) => total + item._product_price * item.quantity, 0);
-  console.log("cart length: "+cart.length);
+  const handleAddToCart = (product, quantity) => {
+    dispatch(addToCart({ asin: product.asin, quantity }));
+  };
+  console.log('Cart Data:', cartData);
   return (
-    <div className="bg-gray-400 p-8 rounded-lg shadow-md flex flex-col items-center justify-center">
-      <h2 className="font-bold text-4xl mb-6 underline" >Shopping Cart</h2>
-      {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+    <div className="bg-black p-8 rounded-lg h-auto w-aut shadow-md flex flex-col items-center justify-center mt-4">
+      <h2 className="font-bold text-4xl mb-6 text-white">Shopping Cart</h2>
+      {cartData.length === 0 ? (
+        <p className='text-white'>Your cart is empty.</p>
       ) : (
-        <div className="bg-gray-200 p-8 rounded-lg shadow-md flex flex-col items-end justify-end">
-          <div className="bg-gray-100 p-8 rounded-lg shadow-xl outflex flex-col items-center justify-center">
-            {/* <p className = "font-bold text-lg underline">Cart Total: ${cartTotal.toFixed(2)}</p> */}
-            <Link to='/Checkout'>
-              <p className="bg-blue-600 text-gray-50 font-bold shadow-md rounded-md px-2 py-2 hover:bg-blue-700 m-2">Go to checkout</p>
+        <div className="bg-black text-white p-8 rounded-lg shadow-md flex flex-col items-end justify-end">
+          <div className="bg-black text-white p-8 rounded-lg shadow-xl outflex flex-col items-center justify-center">
+            <Link to="/Checkout">
+              <p className="bg-blue-600 text-gray-50 font-bold shadow-md rounded-md px-2 py-2 hover:bg-blue-700 m-2">
+                Go to checkout
+              </p>
             </Link>
           </div>
-          {/* {cart.map((item, asin) => (
-            <div key={item.product.asin} className="felx items-center justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10 h-auto w-auto">
-              <div classname = "">
-              <ProductCard product={item.product} showAddToCart={false} classname = ""/> 
+          {cartData.map((item) => (
+            <div
+              key={item.product.asin}
+              className="flex items-center justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10 h-auto w-auto"
+            >
+              <div className="">
+                <ProductCard item={item.product} showAddToCart={false} classname="" />
               </div>
-              <div className="justify-between items-center">
-                <label>
-                  Quantity:
-                  <input
-                    type="number"
-                    value={item.quantity}
-                    onChange={(e) => handleQuantityChange(item, parseInt(e.target.value))}
-                    min="1"
-                    className = "w-12"
-                  />
-                </label>
+              {console.log('Item to change quantity:', item)}
+              <div className="flex items-center justify-center text-white">
+                Quantity &nbsp; &nbsp;
+                <button onClick={() => handleQuantityChange(item, item.quantity - 1)} className="px-2 py-1 border border-gray-400 border-r-0 rounded-l">
+                  -
+                </button>
+                <span className="px-2 py-1 border border-gray-400 border-l-0 border-r-0">{item.quantity}</span>
+                <button onClick={() => handleQuantityChange(item, item.quantity + 1)} className="px-2 py-1 border border-gray-400 border-l-0 rounded-r">
+                  +
+                </button>
                 <button
                   onClick={() => handleRemoveItem(item)}
-                  className=" text-blue-600 rounded-md px-2 py-2 hover:bg-blue-100"
+                  className="text-blue-600 rounded-md px-2 py-2 hover:bg-blue-100"
                 >
                   Delete
                 </button>
-                {console.log('Item ASIN:', item.asin)}
               </div>
+              {console.log('Item ASIN:', item.product.asin)}
             </div>
-            
-          ))} */}
-          {cart[0]?.product?.map((item) => (
-  <div key={item.asin} className="felx items-center justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10 h-auto w-auto">
-    <div className="">
-      <ProductCard product={item} showAddToCart={false} classname="" />
-    </div>
-    <div className="justify-between items-center">
-      <label>
-        Quantity:
-        <input
-          type="number"
-          value={item.quantity}
-          onChange={(e) => handleQuantityChange(item, parseInt(e.target.value))}
-          min="1"
-          className="w-12"
-        />
-      </label>
-      <button
-        onClick={() => handleRemoveItem(item)}
-        className="text-blue-600 rounded-md px-2 py-2 hover:bg-blue-100"
-      >
-        Delete
-      </button>
-      {console.log('Item ASIN:', item.asin)}
-    </div>
-  </div>
-))}
+          ))}
         </div>
       )}
+      {/* Display a button to add a new product */}
+      <Link to='/'>
+      <button
+        className="bg-blue-600 text-white font-bold shadow-md rounded-md p-3 hover:bg-blue-700 m-2"
+      >
+        Back to Store
+      </button>
+      </Link>
     </div>
   );
 }

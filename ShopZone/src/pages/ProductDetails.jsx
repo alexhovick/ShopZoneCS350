@@ -19,7 +19,7 @@ const ProductPage = ()=> {
   const product = data.data.products.find((p) => p.asin === asinToFind);
 
 
-  console.log("product to pass: "+product);
+  console.log("product to pass: "+product.asin);
 
  //const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch(); // Get the dispatch function from react-redux
@@ -49,7 +49,7 @@ const ProductPage = ()=> {
     // Dispatch the addToCart action with the product and quantity
     dispatch(addToCart({ product, quantity }));
     // Optionally, you can display a confirmation message here.\
-    console.log(`Added to Cart: ${quantity} x ${product.product_title}`);
+    console.log(`Added to Cart: ${quantity} x ${product.asin}`);
   };
 
   if (!product) {
