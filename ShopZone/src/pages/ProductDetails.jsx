@@ -4,15 +4,13 @@ import products from '../assets/products';
 import {AiFillStar} from 'react-icons/ai'
 import searchResults from '../assets/searchResults.json'
 
-import { useDispatch } from 'react-redux'; // Import useDispatch from react-redux
+import { useDispatch} from 'react-redux'; // Import useDispatch from react-redux
 import { addToCart } from '../redux/actions/cartActions';
 import { Link } from 'react-router-dom';
 
 const ProductPage = ()=> {
   const { asinToFind } = useParams();
   const data = searchResults;
-
-
   console.log(asinToFind);
   //const asinToFind = 'B07ZPKN6YR';
   //const product = products.find((p) => p.id === parseInt(id));
@@ -21,10 +19,10 @@ const ProductPage = ()=> {
   const product = data.data.products.find((p) => p.asin === asinToFind);
 
 
-  console.log(product);
+  console.log("product to pass: "+product);
 
-  //const [quantity, setQuantity] = useState(1);
-  //const dispatch = useDispatch(); // Get the dispatch function from react-redux
+ //const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch(); // Get the dispatch function from react-redux
 
   const [quantity, setQuantity] = useState(1);
 
@@ -47,19 +45,15 @@ const ProductPage = ()=> {
 
 
 
-
-
-
-
-
   const handleAddToCart = () => {
     // Dispatch the addToCart action with the product and quantity
-    dispatch(addToCart({ ...product, quantity }));
-    // Optionally, you can display a confirmation message here.
+    dispatch(addToCart({ product, quantity }));
+    // Optionally, you can display a confirmation message here.\
+    console.log(`Added to Cart: ${quantity} x ${product.product_title}`);
   };
 
   if (!product) {
-    return <div className="bg-blue-200 p-8 rounded-lg shadow-md flex items-center justify-center text-6xl text-red-600">Product not found</div>;
+    return <div className="bg-black p-8 rounded-lg shadow-md flex items-center justify-center text-6xl text-red-600">Product not found</div>;
   }
 
   return (
@@ -94,12 +88,12 @@ const ProductPage = ()=> {
     </div>
         </label>
         <Link to={'/Cart'}>
-        <button
-          onClick={handleAddToCart}
-          className="bg-blue-600 text-white rounded-md px-4 py-2 hover:bg-blue-700"
-        >
-          Add to Cart
-        </button>
+          <button
+            onClick={handleAddToCart}
+            className="bg-blue-600 text-white rounded-md px-4 py-2 hover:bg-blue-700"
+          >
+            Add to Cart
+          </button>
         </Link >
       </div>
     </div>

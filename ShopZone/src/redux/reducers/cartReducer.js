@@ -9,7 +9,8 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const itemIndex = state.findIndex((item) => item.id === action.payload.id);
+      const itemIndex = state.findIndex((item) => item.asin === action.payload.asin);
+      console.log("reducer item index:"+itemIndex)
 
       if (itemIndex !== -1) {
         // If the item is already in the cart, update the quantity
@@ -20,8 +21,8 @@ const cartSlice = createSlice({
       }
     },
     updateCartItemQuantity: (state, action) => {
-      const { id, quantity } = action.payload;
-      const itemIndex = state.findIndex((item) => item.id === id);
+      const { asin, quantity } = action.payload;
+      const itemIndex = state.findIndex((item) => item.asin === asin);
 
       if (itemIndex !== -1) {
         // Update the quantity of the specified item
@@ -32,8 +33,8 @@ const cartSlice = createSlice({
       }
     },
     removeCartItem: (state, action) => {
-      const itemId = action.payload;
-      const itemIndex = state.findIndex((item) => item.id === itemId);
+      const itemAsin = action.payload;
+      const itemIndex = state.findIndex((item) => item.asin === itemAsin);
 
       if (itemIndex !== -1) {
         state.splice(itemIndex, 1);
