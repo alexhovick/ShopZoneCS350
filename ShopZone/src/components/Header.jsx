@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-import SearchBar from './SearchBar';
-import SZ_Logo from '../assets/SZ_logo.png';
+import SZ_Logo from '../assets/SZ_Logo.png';
 
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
@@ -18,24 +17,19 @@ const Header = () => {
         </Link>
 
         {/* Search Bar */}
-        <div className="flex-1 mx-4">
-          {/* <input
+        <SearchBar/>
+        {/* <div className="flex-1 mx-4">
+          <input
             type="text"
             placeholder="Search products..."
-            className="w-full px-4 py-3 rounded-md text-black text-lg focus:outline-none focus:ring focus:border-blue-300"
-          /> */}
-          <SearchBar/>
-        </div>
+            className="w-full px-4 py-2 rounded-md text-black"
+          />
+        </div> */}
 
-        {/* Links - Login, Returns & Orders, Cart */}
-        <div className="flex space-x-8 text-xl items-center ">
-          <Link to="/login" className="hover:animate-slidedown">
-            <p className='font-bold '>Hello, sign in</p>
-          </Link>
-
-          <Link to="/orders" className="hover:animate-slidedown">
-            <p className='font-bold'>Returns & Orders</p>
-          </Link>
+        {/* Login Button - Takes you to the login page */}
+        <Link to="/login" className="text-xl hover:border-none">
+        <p className='font-bold'>Hello, sign in</p>
+        </Link>
 
           <Link to="/cart" className="hover:animate-slidedown flex items-center">
             <AiOutlineShoppingCart className='h-12 w-12' />

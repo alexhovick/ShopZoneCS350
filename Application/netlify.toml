@@ -1,0 +1,4 @@
+[build]
+  base = "shopzone"  # Set the base directory to "shopzone"
+  command = "npm run build"  # Set the build command for your React app
+  publish = "shopzone/build"  # Set the directory to publish after the build process
