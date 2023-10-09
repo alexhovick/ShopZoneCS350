@@ -8,18 +8,6 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    // addToCart: (state, action) => {
-    //   const itemIndex = state.findIndex((item) => item.asin === action.payload.asin);
-    //   console.log("reducer item index:"+itemIndex)
-
-    //   if (itemIndex !== -1) {
-    //     // If the item is already in the cart, update the quantity
-    //     state[itemIndex].quantity += action.payload.quantity;
-    //   } else {
-    //     // If it's a new item, add it to the cart
-    //     state.push(action.payload);
-    //   }
-    // },
     addToCart: (state, action) => {
       const newItem = action.payload;
       console.log('Adding to cart:', newItem);

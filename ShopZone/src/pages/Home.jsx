@@ -1,28 +1,34 @@
 import { ProductCard } from "../components";
-import products from "../assets/products";
 import { genres } from "../assets/constants";
 import {Loader, Error} from '../components';
 import searchResults from '../assets/searchResults.json'
 
+import { useDispatch, useSelector } from "react-redux";
+import { selectGenreListId } from "../redux/features/searchSlice";
+
 //import { useGetProductOffersQuery } from "../redux/services/AmazonAPI";
-//import { useGetProductSearchQuery } from "../redux/services/AmazonAPI";
+import { useGetProductSearchQuery, useGetProductsByGenreQuery } from "../redux/services/AmazonAPI";
+
 
 const Home = () =>{
-  // const {data, isFetching, error} = useGetProductSearchQuery();
-   const searchTerm = "iPhone";
-
+  const searchTerm = "iPhone";
+   const dispatch = useDispatch();
+   const {genreListId} = useSelector((state) => state.search);
+   //const genreListId = 'aps';
+   console.log("genrelistid: ", genreListId);
+   //const {data, isFetching, error} = useGetProductsByGenreQuery(searchTerm, genreListId);
    //if(isFetching) return <Loader title="Loading Products"/>;
 
    //if (error) return <Error/>
   const data = searchResults;
-  console.log(data);
+  console.log("data: "+data);
   return (
     <div className="flex flex-col">
       <div className="w-full flex justify-between items-center sm:flex-row flex-column mt-4 mb-10">
         <h2 className="font-bold text-3xl text-white text-center">Discover Products: {searchTerm}</h2>
         <select
-          onChange={() => {}}
-          value=""
+          onChange={(e) => dispatch(selectGenreListId(e.target.value))}
+          value={genreListId || 'aps'}
           className="bg-black text-gray-300 p-3 text-sm rounded-lg outline-none sm:mt-0 mt-5"
         >
           {genres.map((genre) => <option key= {genre.value} value={genre.value}>{genre.title}</option>)}
