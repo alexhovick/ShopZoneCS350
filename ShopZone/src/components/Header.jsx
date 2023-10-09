@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-import SearchBar from './SearchBar';
+
 import SZ_Logo from '../assets/SZ_Logo.png';
 
 import { AiOutlineShoppingCart } from 'react-icons/ai';
@@ -18,14 +18,14 @@ const Header = () => {
         </Link>
 
         {/* Search Bar */}
-        <SearchBar/>
-        {/* <div className="flex-1 mx-4">
+{/*         <SearchBar/> */}
+         <div className="flex-1 mx-4">
           <input
             type="text"
             placeholder="Search products..."
             className="w-full px-4 py-2 rounded-md text-black"
           />
-        </div> */}
+        </div> 
 
         {/* Login Button - Takes you to the login page */}
         <Link to="/login" className="text-xl hover:border-none">
