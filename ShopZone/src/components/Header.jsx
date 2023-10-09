@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import SearchBar from './SearchBar';
-import SZ_Logo from '../assets/SZ_logo.png';
+import SZ_Logo from '../assets/SZ_Logo.png';
 
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
