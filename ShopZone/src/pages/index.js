@@ -4,7 +4,7 @@ import Home from './Home'
 import ProductDetails from './ProductDetails'
 import SearchResults from './SearchResults'
 import Login from './Login'
-import SearchBar from './SearchBar'
+
 
 export {
     Cart,
@@ -13,5 +13,4 @@ export {
     ProductDetails,
     SearchResults,
     Login,
-    SearchBar,
 }
