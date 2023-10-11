@@ -1,0 +1,41 @@
+{
+    "status": "OK",
+    "request_id": "09923c48-7d34-4ae3-96ab-0294368e732e",
+    "data": {
+      "asin": "B07ZPKN6YR",
+      "country": "US",
+      "about_product": [
+        "This phone is unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc.).",
+        "Tested for battery health and guaranteed to have a minimum battery capacity of 80%.",
+        "Successfully passed a full diagnostic test which ensures like-new functionality and removal of any prior-user personal information.",
+        "The device does not come with headphones or a SIM card. It does include a generic (Mfi certified) charger and charging cable.",
+        "Inspected and guaranteed to have minimal cosmetic damage, which is not noticeable when the device is held at arm's length."
+      ],
+      "product_description": "The iPhone 11 features a 6.1-inch LCD display that Apple calls a \"Liquid Retina HD Display.\" It features a 1792 x 828 resolution at 326ppi, a 1400:1 contrast ratio, 625 nits max brightness, True Tone support for adjusting the white balance to the ambient lighting, and wide color support for true-to-life colors. The iPhone 11 is available in six different colors: White, Black, Yellow, (PRODUCT)RED, Purple, and Green.",
+      "product_information": {
+        "Product Dimensions": "7 x 5 x 4 inches",
+        "Item Weight": "9.1 ounces",
+        "ASIN": "B07ZPKN6YR",
+        "Item model number": "MWKM2LL/A",
+        "Batteries": "1 Lithium Ion batteries required.",
+        "OS": "IOS 16",
+        "RAM": "4 GB",
+        "Wireless communication technologies": "Cellular",
+        "Connectivity technologies": "Bluetooth, Wi-Fi, USB, NFC",
+        "GPS": "True",
+        "Special features": "Touchscreen",
+        "Other display features": "Wireless",
+        "Human Interface Input": "Touchscreen",
+        "Other camera features": "Front, Rear",
+        "Form Factor": "Bar",
+        "Color": "Black",
+        "Battery Power Rating": "3600 Amp Hours",
+        "Whats in the box": "Adapter",
+        "Manufacturer": "Apple Computer",
+        "Date First Available": "October 28, 2019",
+        "Memory Storage Capacity": "64 GB",
+        "Standing screen display size": "6.1 Inches",
+        "Ram Memory Installed Size": "4 GB"
+      }
+    }
+  }

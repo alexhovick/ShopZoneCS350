@@ -13,12 +13,17 @@ export const amazonDataApi = createApi({
   }),
   endpoints: (builder) => ({
     getProductOffers: builder.query({query: (params) => '/product-offers'}),
-    getProductsByGenre: builder.query({query: (searchTerm,genre) => `/search?query=${searchTerm}&category_id=${genre}`}),
-    getProductSearch: builder.query({query: () => '/search?query=iPhone'}),
+
+    getProductsByGenre: builder.query({query: (searchTerm, genre) => `/search?query=${searchTerm}&category_id=${genre}`}),
+
+    getProductSearch: builder.query({query: (searchTerm) => `/search?query=${searchTerm}`}),
 
     getProductReviews: builder.query({query: (params) => '/product-reviews'}),
-    getProductDetails: builder.query({query: (params) => '/product-details'}),
+
+    getProductDetails: builder.query({query: (params) => `/product-details?asin=${params}&country=US`}),
+    
     getProductCategoryList: builder.query({query: (params) => '/product-category-list'}),
+
   }),
 });
 

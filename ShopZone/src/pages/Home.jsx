@@ -2,12 +2,13 @@ import { ProductCard } from "../components";
 import { genres } from "../assets/constants";
 import {Loader, Error} from '../components';
 import searchResults from '../assets/searchResults.json'
+import phone_search from '../assets/phone_search.json'
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectGenreListId } from "../redux/features/searchSlice";
 
 //import { useGetProductOffersQuery } from "../redux/services/AmazonAPI";
-import { useGetProductSearchQuery, useGetProductsByGenreQuery } from "../redux/services/AmazonAPI";
+import { useGetProductSearchQuery, useGetProductsByGenreQuery } from "../redux/services/AmazonApi";
 
 
 const Home = () =>{
@@ -20,8 +21,8 @@ const Home = () =>{
    //if(isFetching) return <Loader title="Loading Products"/>;
 
    //if (error) return <Error/>
-  const data = searchResults;
-  console.log("data: "+data);
+  const data = phone_search;
+  console.log("data: "+data.data.products);
   return (
     <div className="flex flex-col">
       <div className="w-full flex justify-between items-center sm:flex-row flex-column mt-4 mb-10">
@@ -54,27 +55,5 @@ const Home = () =>{
   );
 };
 
-
-
-
-
-
-
-
-
-// const Home = () => (
-  
-//   <div >
-//     <h1 className="font-bold text-3xl text-white text-center mb-6 underline">Featured Products</h1>
-//     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-//       {products.map((product) => (
-//         <ProductCard key={product.id} product={product}/>
-//       ))}
-//     </div>
-//     Home Page
-//   </div>
-
-// );
- 
 
 export default Home;
