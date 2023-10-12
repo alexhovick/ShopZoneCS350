@@ -44,12 +44,13 @@ const Home = () =>{
           />
         ))}
       </div> */}
-      <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+      <div className="flex flex-wrap  justify-center gap-8">
+      {/* <div className="flex flex-wrap sm:justify-start justify-center gap-8"> */}
       {data?.data?.products?.map((item, i) => (
-    <div key={item.asin} className="flex justify-center">
-      <ProductCard item={item} i={i} />
-          </div>
-        ))}
+      <div key={item.asin} className="flex justify-center">
+        <ProductCard item={item} i={i} />
+      </div>
+      ))}
       </div>
     </div>
   );

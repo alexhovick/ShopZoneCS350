@@ -5,7 +5,7 @@ import {AiFillStar} from 'react-icons/ai'
 const ProductCard = ({ item, i }) => {
   return (
     <Link to={`/Product/${item?.asin}?`} className="group block rounded-lg overflow-hidden shadow-md hover:shadow-xl">
-      <div className='flex flex-col w-[350px] h-[450px] p-4 bg-white/10 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer'>
+      <div className='flex flex-col w-[330px] h-[450px] p-4 bg-white/10 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer items-center'>
 
         <div className='relative w-full h-60 group'>
           <div className={' flex absolute inset-0 justify-center bg-black bg-opacity-40 group-hover:flex hover:bg-opacity-60'}>
