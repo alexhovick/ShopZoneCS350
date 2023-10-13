@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    genreListId: '',
+    genreListId: 'aps',
+    searchTerm: 'halloween',
 };
 
 const searchSlice = createSlice ({
@@ -10,6 +11,7 @@ const searchSlice = createSlice ({
     reducers:{
         selectGenreListId: (state, action) => {
             state.genreListId = action.payload;
+            state.searchTerm = action.payload;
         },
     },
 })

@@ -14,8 +14,10 @@ export const amazonDataApi = createApi({
   endpoints: (builder) => ({
     getProductOffers: builder.query({query: (params) => '/product-offers'}),
 
-    getProductsByGenre: builder.query({query: (searchTerm, genre) => `/search?query=${searchTerm}&category_id=${genre}`}),
+    //getProductsByGenre: builder.query({query: (searchTerm, genreListId) => `/search?query=${searchTerm}&category_id=${genreListId}`}),
 
+    getProductsByGenre: builder.query({query: ({ searchTerm, genreListId }) => {return `/search?query=${searchTerm}&category_id=${genreListId}`;}}),
+    
     getProductSearch: builder.query({query: (searchTerm) => `/search?query=${searchTerm}`}),
 
     getProductReviews: builder.query({query: (params) => '/product-reviews'}),
