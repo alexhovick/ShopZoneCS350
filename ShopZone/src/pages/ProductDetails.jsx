@@ -43,7 +43,7 @@ const ProductPage = ()=> {
   //const asinToFind = 'B07ZPKN6YR';
   //const product = products.find((p) => p.id === parseInt(id));
   //const product = SearchResults.find((item) => item.data.products.asin === parseInt(asin));
-   const product = searchData.data.products.find((item) => item.asin === asinToFind);
+   const product = searchData?.data?.products.find((item) => item.asin === asinToFind);
    //const product = searchData?.data?.products;
    const productDetails = detailsData?.data;
 
@@ -83,7 +83,7 @@ const ProductPage = ()=> {
 
   return (
     <div className="bg-black p-8 rounded-lg shadow-md flex items-center mt-4">
-        <div className="mr-10 w-2/3 bg-yellow-300 flex items-center justify-center">
+        <div className="mr-10 w-2/3 bg-transparent-300 flex items-center justify-center">
           <img className="object-contain" src={product.product_photo} alt={product.product_title} />
       </div>
       <div>
@@ -91,39 +91,7 @@ const ProductPage = ()=> {
         <h2 className='text-white items-center flex'> <AiFillStar/> <AiFillStar/> <AiFillStar/> <AiFillStar/> <AiFillStar/>  &nbsp; {product.product_num_ratings} </h2>   
         <p className="text-white mb-4">{productDetails.product_description}</p>
         <p className="text-xl font-semibold text-blue-500 mb-2">{product.product_description}</p>
-         <div className='flex justify-end items-center'> 
-            {/* <label className="block mb-2 text-white text-bold text-xl">
-              <div className="w-32 bg-black text-white font-bold rounded-lg p-2">
-                <div className="flex items-center justify-end ">
-                Quantity:&nbsp;
-                  <button onClick={decrementQuantity} className="px-2 py-1 border border-gray-400 border-r-0 rounded-l">
-                    -
-                  </button>
-                  <span className="px-2 py-1 border border-gray-400 border-l-0 border-r-0">{quantity}</span>
-                  <button onClick={incrementQuantity} className="px-2 py-1 border border-gray-400 border-l-0 rounded-r">
-                    +
-                  </button>
-                  &nbsp;
-                  <Link to={'/Cart'}>
-                    <button
-                      onClick={handleAddToCart}
-                      className="bg-blue-600 text-white w-56 rounded-full px-4 py-2 hover:bg-blue-700"
-                    >
-                      Add to Cart
-                    </button>
-                  </Link >
-          
-                </div>
-              </div>
-            </label> */}
-            {/* <Link to={'/Cart'}>
-              <button
-                onClick={handleAddToCart}
-                className="bg-blue-600 text-white  rounded-full px-4 py-2 hover:bg-blue-700"
-              >
-                Add to Cart
-              </button>
-            </Link > */}
+         <div className='flex justify-end items-center'>
           </div>
           <div className="text-white">
             <h2 className="text-xl font-bold mb-2 text-white">About This Product:</h2>
@@ -134,16 +102,8 @@ const ProductPage = ()=> {
             ))}
           </div>
           &nbsp;
-          {/* <div className="text-white">
-            {Object.entries(productDetails?.product_information).map(([key, value]) => (
-              <div key={key} className="product-info-item">
-                <span className="font-bold">{key}: </span>
-                <span className="italic">{value}</span>
-              </div>
-            ))}
-          </div> */}
-          <div className="text-white flex">
-            <div className="w-1/2 mr-1">
+          <div className="text-white flex">   {/* divide product information into two columns:*/}
+            <div className="w-1/2 mr-1"> {/* LEFT */}
               {Object.entries(productDetails?.product_information).slice(0, Math.ceil(Object.keys(productDetails?.product_information).length / 2)).map(([key, value]) => (
                 <div key={key} className="product-info-item">
                   <span className="font-bold">{key}: </span>
@@ -151,7 +111,7 @@ const ProductPage = ()=> {
                 </div>
               ))}
             </div>
-            <div className="w-1/2 ml-1">
+            <div className="w-1/2 ml-1">  {/* RIGHT */}
                 {Object.entries(productDetails?.product_information).slice(Math.ceil(Object.keys(productDetails?.product_information).length / 2)).map(([key, value]) => (
                   <div key={key} className="product-info-item">
                     <span className="font-bold">{key}: </span>
