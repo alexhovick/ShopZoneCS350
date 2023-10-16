@@ -16,7 +16,7 @@
 * What challenges do I have?
     * Various challenges encountered with developing our application in terms of writing the code and building the architecture
     * Error messages regarding Uncaught TypeError and undefined properties
-    * We currently do not have a database so the application keeps track of quantifiable items and it was hard to understand how this actually works to keep track of quantity in cart
+    * We currently do not have a database so the application keeps track of quantifiable items and it was hard to understand how this actually works to keep track of quantity in cart, I ended up utilizing redux to share data across the screens
     * Search bar did not work and the componenet was causing problems for test also
     * Did not know which API to use since they had pros and cons depending on latency, price, limited calls, difficulty implementing, and others
     * Our team were unsure about how to process pay information and whether we wanted to implment an actual paying method
