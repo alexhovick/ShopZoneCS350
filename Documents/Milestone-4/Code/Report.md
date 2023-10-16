@@ -9,7 +9,7 @@
     * Encountered error messages that were fixed with the help of ChatGPT
     * Logged issues that were encountered while developing
     * Collaborated with Test to essentially build our product and run test driven development
-* What will I do?  Design for Milestone 5
+* What will I do?  Code for Milestone 5
    * Research with team members to develop our unimplemented features
    * Continue to add to our application and refine the user experience
    * Collaborate with test, design, and requirements to discuss how to improve the current state of our product
