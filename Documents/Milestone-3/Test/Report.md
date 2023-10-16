@@ -18,7 +18,8 @@
             * 17 Pass and 3 fail.
             * The fails are from testing features that arent implemented yet.
 * What will I do?  Requirements for Milestone 4
-    * 
+    * Measure the current coverage our test have of our code.
+    * Create Tests for all data views
 * What challenges do I have?
     * Dumb jest not making it easy. 
 * Engineering investment
