@@ -2,6 +2,8 @@
 
 ## Milestone 4 - Code - Elmore Siahaan
 
+* Current Page [here](https://shopzone-app.netlify.app/)
+
 * What did I do?
     * Learned from A.I. how to write React code to add product to database and list products in cart.
     * Developed our application to have almost all features planned 
