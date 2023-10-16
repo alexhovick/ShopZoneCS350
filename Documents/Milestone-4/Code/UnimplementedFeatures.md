@@ -1,5 +1,7 @@
 # Unimplemented features on our ShopZone application
 
+Here are some features that we have not implemented on our web application, however we are planning to continue to work on adding these features throughout the semester so we have a more robust application.
+
 **User Registration and Authentication:**
 
 1. User registration with email or social media.
