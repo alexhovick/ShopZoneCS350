@@ -1,0 +1,4 @@
+[build]
+  base = "SHOPZONECS350/Shopzone"
+  command = "npm run build"
+  publish = "build"  # Update this line to point to the "build" directory.
