@@ -1,6 +1,6 @@
 //Before running test run 'npm run dev' in the terminal
 
-/*describe('Test the header component', () => {
+describe('Test the header component', () => {
   it('"Hello, sign in" links to the login page', () => {
     cy.visit('http://localhost:3000/').contains('Hello, sign in').click().url().should('eq', 'http://localhost:3000/login')
   });
@@ -26,9 +26,9 @@ describe('Test the search page', () => {
       cy.contains('Nintendo Switch - Animal Crossing: New Horizons Edition - Switch')
     })
   })
-})*/
+})
 describe('Test product details page', () => {
-  /*
+  
   it('Clicking on item links to correct product page', () => {
     cy.visit('http://localhost:3000/search/PS5').contains('PlayStation 5 Console (PS5)').click().url().should('eq', 'http://localhost:3000/Product/B0BCNKKZ91')
   });
@@ -45,9 +45,8 @@ describe('Test product details page', () => {
     cy.contains('4.8')
   });
   it('Product page displays num_rating of product', { defaultCommandTimeout: 10000 }, () =>{
-    cy.contains('7166')
+    cy.contains('7195')
   });
-  */
   it('Quantatiy adjuster increases and decreases quantity to 4', { defaultCommandTimeout: 10000 }, () =>{
     cy.visit('http://localhost:3000/Product/B0BCNKKZ91').contains('+').click().click().click().click().click().click()
     cy.get('[role="-"]').click().click().click()
@@ -78,15 +77,20 @@ describe('Test Cart Page', () => {
     cy.get('[role="total price"]').contains('1996.00')
   });
   it('Change quantity of item to check that total cart price updates', () => {
-    cy.contains('-').click().click().click()
+    cy.get('[role="-"]').click().click().click()
     cy.get('[role="quantity"]').contains('1')
     cy.get('[role="total price"]').contains('499.00')
   });
   it('Checkout button links to checkout', () => {
-    cy.contains('Go to checkout').url().should('eq', 'http://localhost:3000/Checkout')
+    cy.contains('Go to checkout').click().url().should('eq', 'http://localhost:3000/Checkout')
   })
   it('delete button removes that item from cart', () => {
-    
+    cy.go("back")
+    cy.contains("Delete").click()
+    cy.contains("Your cart is empty.")
+  })
+  it('"Back to Store" button links back to the home page', () => {
+    cy.contains("Back to Store").click().url().should('eq', 'http://localhost:3000/')
   })
   
 })
