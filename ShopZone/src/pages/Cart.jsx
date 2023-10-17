@@ -45,10 +45,10 @@ function Cart() {
               {console.log('Item to change quantity:', item)}
               <div className="flex items-center justify-center text-white">
                 Quantity &nbsp; &nbsp;
-                <button onClick={() => handleQuantityChange(item, item.quantity - 1)} className="px-2 py-1 border border-gray-400 border-r-0 rounded-l">
+                <button onClick={() => handleQuantityChange(item, item.quantity - 1)} className="px-2 py-1 border border-gray-400 border-r-0 rounded-l" role="-">
                   -
                 </button>
-                <span className="px-2 py-1 border border-gray-400 border-l-0 border-r-0">{item.quantity}</span>
+                <span className="px-2 py-1 border border-gray-400 border-l-0 border-r-0" role="quantity">{item.quantity}</span>
                 <button onClick={() => handleQuantityChange(item, item.quantity + 1)} className="px-2 py-1 border border-gray-400 border-l-0 rounded-r">
                   +
                 </button>
