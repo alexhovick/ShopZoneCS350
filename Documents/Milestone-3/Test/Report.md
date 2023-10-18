@@ -17,11 +17,11 @@
         * The 20 tests for the code are [Test_File.md](Test_File.md).
             * 17 Pass and 3 fail.
             * The fails are from testing features that arent implemented yet.
-* What will I do?  Requirements for Milestone 4
+* What will I do?  Test for Milestone 4
     * Measure the current coverage our test have of our code.
     * Create Tests for all data views
 * What challenges do I have?
-    * Dumb jest not making it easy. 
+    * My biggest challenge was the the test file failing once the api was implemented and not being able to fix the problem or mock the api.
 * Engineering investment
     * Individually I spent about 10 hours on Test for Milestone 3
     * Our team met for 6 hours
