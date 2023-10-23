@@ -19,6 +19,3 @@
 15. As a buyer, I want to track the status of my orders.
 16. As a user, I want to view my order history.
 17. As a user, I want to receive an email confirmation after placing an order.
-18. As a shopper, I want to add products to my wishlist.
-19. As a user, I want to view and manage the items in my wishlist.
-20. As a shopper, I want to move items from my wishlist to my cart.

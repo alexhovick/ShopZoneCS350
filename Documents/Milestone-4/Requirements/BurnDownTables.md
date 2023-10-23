@@ -1,28 +1,25 @@
-| Sprint | Features remaining at end of sprint | Features still remaining |
-|--------|-------------------------------------|--------------------------|
-| 1      | 19                                  | 19                       |
-| 2      | 17                                  | 17                       |
-| 3      | 15                                  | 15                       |
-| 4      | 12                                  | 14                       |
-| 5      | 10                                  |                          |
-| 6      | 7                                   |                          |
-| 7      | 6                                   |                          |
-| 8      | 3                                   |                          |
-| 9      | 0                                   |                          |
+| Sprint | Projected Features | Current Track |
+|--------|--------------------|---------------|
+| 1      | 16                 | 16            |
+| 2      | 14                 | 14            |
+| 3      | 12                 | 12            |
+| 4      | 9                  | 11            |
+| 5      | 7                  |               |
+| 6      | 4                  |               |
+| 7      | 3                  |               |
+| 8      | 0                  |               |
+| 9      | 0                  |               |
 
 Graph view [here](Sprint_Burn_Down.png)
 
 
-| Milestone | Features remaining at end of Milestone | Features Left |
-|-----------|-----------------------------------------|--------------|
-| 2         | 17                                      | 17           |
-| 3         | 15                                      | 15           |
-| 4         | 12                                      | 14           |
-| 5         | 7                                       |              |
-| 6         | 3                                       |              |
-| 7         | 0                                       |              |
-| 8         | 3                                       |              |
-| 9         | 0                                       |              |
+| Milestone | Projected Features | Current Track |
+|-----------|--------------------|---------------|
+| 2         | 14                 | 14            |
+| 3         | 12                 | 12            |
+| 4         | 9                  | 11            |
+| 5         | 4                  |               |
+| 6         | 0                  |               |
 
 
 Graph view [here](Milestone_Burn_Down.png)

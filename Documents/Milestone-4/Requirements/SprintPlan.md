@@ -1,5 +1,5 @@
-# Current Velocity: 0.375 Features per Hour
-# Estimated Velocity: 0.377 Features per Hour
+# Current Velocity: 0.429 Features per Hour
+# Estimated Velocity: 0.369 Features per Hour
 
 # Milestone 2: 13 Hours Expected
 ## Sprint 1: 
@@ -28,13 +28,13 @@ As a user, I want to search for products by keyword.
 
         Time Expected: 4 Hours
 
-        Time Taken: 
+        Time Taken: 5 Hours
         
 As a shopper, I want to browse products by category.
 
         Time Expected: 4 Hours
 
-        Time Taken: 
+        Time Taken: 0.5 Hours
 
 # Milestone 4: 6 Hours Expected
 ## Sprint 4: 
@@ -42,7 +42,7 @@ As a shopper, I want to proceed to checkout from the cart.
 
         Time Expected: 2 Hours
 
-        Time Taken:
+        Time Taken: 0.5 Hours
     
 As a shopper, I want to select my preferred payment method.
 
@@ -116,22 +116,4 @@ As a user, I want to receive an email confirmation after placing an order.
 
         Time Taken:
 
-# Milestone 7: 7 Hours Expected
-## Sprint 9:
-As a shopper, I want to add products to my wishlist.
-
-        Time Expected: 4 Hours
-
-        Time Taken:
-
-As a user, I want to view and manage the items in my wishlist.
-
-        Time Expected: 1 Hour
-
-        Time Taken:
-
-As a shopper, I want to move items from my wishlist to my cart.
-
-        Time Expected: 2 Hours
-
-        Time Taken:
+# Milestone 7:
