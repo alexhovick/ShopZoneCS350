@@ -19,8 +19,11 @@
             * The fails are from testing features that arent implemented yet.
 * What will I do?  Test for Milestone 4
     * Measure the current coverage our test have of our code.
-    * Create Tests for all data views
+    * implement automated testing.
+    * Create Tests for all data views. 
 * What challenges do I have?
+    * The test code not working with the api
+    * Failing to mock the api to get the test code to work.
     * My biggest challenge was the the test file failing once the api was implemented and not being able to fix the problem or mock the api.
 * Engineering investment
     * Individually I spent about 10 hours on Test for Milestone 3
