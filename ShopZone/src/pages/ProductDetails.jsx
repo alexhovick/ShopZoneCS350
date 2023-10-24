@@ -94,7 +94,7 @@ const ProductPage = ()=> {
          <div className='flex justify-end items-center'>
           </div>
           <div className="text-white">
-            <h2 className="text-xl font-bold mb-2 text-white">About This Product:</h2>
+            <h2 className="text-xl font-bold mb-2 text-white" role="about product">About This Product:</h2>
             {productDetails?.about_product.map((item, index) => (
               <p key={index} className="italic">
                 {item}
@@ -125,10 +125,10 @@ const ProductPage = ()=> {
                 <div className="w-32 bg-black text-white font-bold rounded-lg p-2">
                   <div className="flex items-center justify-end ">
                   Quantity:&nbsp;
-                    <button onClick={decrementQuantity} className="px-2 py-1 border border-gray-400 border-r-0 rounded-l">
+                    <button onClick={decrementQuantity} className="px-2 py-1 border border-gray-400 border-r-0 rounded-l" role="-">
                       -
                     </button>
-                    <span className="px-2 py-1 border border-gray-400 border-l-0 border-r-0">{quantity}</span>
+                    <span className="px-2 py-1 border border-gray-400 border-l-0 border-r-0" role="quantity">{quantity}</span>
                     <button onClick={incrementQuantity} className="px-2 py-1 border border-gray-400 border-l-0 rounded-r">
                       +
                     </button>
