@@ -21,12 +21,12 @@ function Cart() {
   };
   console.log('Cart Data:', cartData);
   return (
-    <div className="bg-black p-8 rounded-lg h-auto w-aut shadow-md flex flex-col items-center justify-center mt-4">
+    <div className="bg-black p-8 rounded-lg h-auto w-auto shadow-md flex flex-col items-center justify-center mt-4">
       <h2 className="font-bold text-4xl mb-6 text-white">Shopping Cart</h2>
       {cartData.length === 0 ? (
         <p className='text-white'>Your cart is empty.</p>
       ) : (
-        <div className="bg-black text-white p-8 rounded-lg shadow-md flex flex-col items-end justify-end">
+        <div className="bg-black  text-white p-8 rounded-lg  flex flex-col items-end justify-end">
           <div className="bg-black text-white p-8 rounded-lg shadow-xl outflex flex-col items-center justify-center">
             <Link to="/Checkout">
               <p className="bg-blue-600 text-gray-50 font-bold shadow-md rounded-md px-2 py-2 hover:bg-blue-700 m-2">
