@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {AiFillStar} from 'react-icons/ai'
+import {BsStarFill,BsStarHalf, BsStar}  from 'react-icons/bs';
 //import searchResults from '../assets/searchResults.json'
 
 import product_details from '../assets/product_details.json'
@@ -44,11 +44,12 @@ const ProductPage = ()=> {
   //const product = products.find((p) => p.id === parseInt(id));
   //const product = SearchResults.find((item) => item.data.products.asin === parseInt(asin));
    const product = searchData?.data?.products.find((item) => item.asin === asinToFind);
-   //const product = searchData?.data?.products;
+   const product_price = product.product_price;
    const productDetails = detailsData?.data;
 
 
   console.log("product to pass: "+product.asin);
+  console.log("product price: "+product_price);
 
 
   const incrementQuantity = () => {
@@ -81,14 +82,57 @@ const ProductPage = ()=> {
     return <div className="bg-black p-8 rounded-lg shadow-md flex items-center justify-center text-6xl text-red-600">Product not found</div>;
   }
 
+  const renderStarRating = (rating) => {
+    const maxStars = 5;
+    const isHalfStar = rating % 1 !== 0;
+  
+    const fullStars = Math.floor(rating);
+    const emptyStars = maxStars - fullStars;
+  
+    const stars = [];
+  
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<BsStarFill key={`star-${i}`} />);
+    }
+  
+    // Render half star or change opacity if it's not a whole number
+    if (isHalfStar) {
+      // stars.push(<AiFillStar key="half-star" style={{ width: '50%' }} />);
+      stars.push(<BsStarHalf key = "half-star"/>)
+    }
+  
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<BsStar key={`empty-star-${i}`} />);
+    }
+  
+    return (
+      <div className="flex items-center">
+        {stars.slice(0, maxStars).map((star, index) => (
+          <span key={index}>{star}</span>
+        ))}
+      </div>
+    );
+  };
+
+  const decodeHTMLEntities = (text) => {
+    const parser = new DOMParser();
+    const decodedString = parser.parseFromString(text, 'text/html').body.textContent;
+    return decodedString;
+  }
+  const decodedTitle = decodeHTMLEntities(product.product_title);
+
   return (
     <div className="bg-black p-8 rounded-lg shadow-md flex items-center mt-4">
         <div className="mr-10 w-2/3 bg-transparent-300 flex items-center justify-center">
           <img className="object-contain" src={product.product_photo} alt={product.product_title} />
       </div>
       <div>
-        <h2 className="text-4xl font-semibold mb-2 text-white text-bold flex">{product.product_title}</h2>
-        <h2 className='text-white items-center flex'> <AiFillStar/> <AiFillStar/> <AiFillStar/> <AiFillStar/> <AiFillStar/>  &nbsp; {product.product_num_ratings} </h2>   
+        <h2 className="text-4xl font-semibold mb-2 text-white text-bold flex">{decodedTitle}</h2>
+        <div className="my-2"></div>
+        <h2 className='text-white items-center flex text-xl'> {renderStarRating(product?.product_star_rating)} &nbsp; {product.product_num_ratings} </h2>  
+        <div className="my-2"></div> 
+        <h2 className='text-white items-center flex'> <span className="italic text-yellow-500 text-4xl"> {product_price} </span> </h2>
+        <p className="text-white mb-4">____________________________________________________________________________________</p>   
         <p className="text-white mb-4">{productDetails.product_description}</p>
         <p className="text-xl font-semibold text-blue-500 mb-2">{product.product_description}</p>
          <div className='flex justify-end items-center'>
