@@ -4,6 +4,7 @@ import Error from './Error';
 import Loader from './Loader'
 import SearchBar from './SearchBar';
 import LoginSignup from './LoginSignup';
+import MiniProductCard from './MiniProductCard';
 
 export {
   Header,
@@ -12,4 +13,5 @@ export {
   Loader,
   SearchBar,
   LoginSignup,
+  MiniProductCard,
 };

@@ -6,7 +6,6 @@ import SearchResults from './SearchResults'
 import Login from './Login'
 import Orders from './Orders'
 
-
 export {
     Cart,
     Checkout,

@@ -44,7 +44,7 @@ const ProductPage = ()=> {
   //const product = products.find((p) => p.id === parseInt(id));
   //const product = SearchResults.find((item) => item.data.products.asin === parseInt(asin));
    const product = searchData?.data?.products.find((item) => item.asin === asinToFind);
-   const product_price = product.product_price;
+   const product_price = product?.product_price;
    const productDetails = detailsData?.data;
 
 
