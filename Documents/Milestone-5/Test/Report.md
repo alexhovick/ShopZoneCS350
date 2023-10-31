@@ -11,7 +11,7 @@
     * Ensured the test framework met the required test coverage standards, which we aimed at 90%
     * Created code and Cypress tool to create around 50% of code being tests
     * Discussed improvement strategies with design, requirements, and code for current state of our application
-* What will I do?  Code for Milestone 5
+* What will I do?  Code for Milestone 6
    * Identify potential areas of improvement in the testing process and uncover any gaps in the test coverage
    * Seek feedback from other team members to ensure testing framework meets our current needs
    * Communicate ongoing testing activities, such as highlighting any issues or concerns and sharing the overall progress towards meeting our project goals
