@@ -29,6 +29,7 @@ const PayButton = ({cartItems}) => {
     //     .catch((err) => console.log(err.message));
 
     // };
+    console.log("stringed cart data: ",cartItems);
     const handleCheckOut = () => {
         fetch('http://localhost:5500/create-checkout-session', {
           method: "POST",
@@ -36,10 +37,7 @@ const PayButton = ({cartItems}) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            items:[
-              {id: 1, quantity: 2},
-              {id: 2, quantity: 4},
-            ]
+            cartItems,
           }),
         })
           .then((res) => {
@@ -47,8 +45,8 @@ const PayButton = ({cartItems}) => {
             return res.json().then((json) => Promise.reject(json));
           })
           .then(({ url }) => {
-            console.log(url); // Log "Hi" to the console
-            //window.location = url
+            //console.log(url); // Log "Hi" to the console
+            window.location = url
           })
           .catch((e) => {
             console.error(e.error);
