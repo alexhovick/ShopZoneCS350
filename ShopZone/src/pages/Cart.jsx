@@ -5,6 +5,7 @@ import ProductCard from '../components/ProductCard';
 import  MiniProductCard  from '../components/MiniProductCard';
 import { Link } from 'react-router-dom';
 import { BsTrash3 } from "react-icons/bs";
+import PayButton from '../components/PayButton';
 
 function Cart() {
   const cartData = useSelector((state) => state.cart);
@@ -91,11 +92,19 @@ function Cart() {
       </Link>
       <div className="bg-black text-white p-8 rounded-lg shadow-xl outflex flex-col items-center justify-center">
         
-            <Link to="/Checkout">
+            {/* <Link to="/Checkout">
               <p className="bg-blue-600 text-gray-50 font-bold shadow-md rounded-md px-2 py-2 hover:bg-blue-700 m-2">
                 Go to checkout
               </p>
-            </Link>
+            </Link> */}
+            <p className="bg-blue-600 text-gray-50 font-bold shadow-md rounded-md px-2 py-2 hover:bg-blue-700 m-2">
+                <PayButton
+                  cartItems = {cartData}
+                >
+                  Go to checkout
+                </PayButton>
+            </p>
+
           </div>
       <div>
       <span className="text-white">Subtotal: ${subtotal.toFixed(2)}</span>

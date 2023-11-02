@@ -5,6 +5,7 @@ import ProductDetails from './ProductDetails'
 import SearchResults from './SearchResults'
 import Login from './Login'
 import Orders from './Orders'
+import CheckoutSuccess from './CheckoutSuccess'
 
 export {
     Cart,
@@ -14,4 +15,5 @@ export {
     SearchResults,
     Login,
     Orders,
+    CheckoutSuccess,
 }

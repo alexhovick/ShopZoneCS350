@@ -177,7 +177,7 @@ const ProductPage = ()=> {
                       +
                     </button>
                     &nbsp;
-                    <Link to={'/Cart'}>
+                    <Link to="">
                       <button
                         onClick={handleAddToCart}
                         className="bg-blue-600 text-white w-56 rounded-full px-4 py-2 hover:bg-blue-700"

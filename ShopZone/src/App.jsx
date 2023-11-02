@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import { Header } from './components';
-import { Cart, Checkout, Home, Login, ProductDetails, SearchResults, Orders} from './pages';
+import { Cart, Checkout, Home, Login, ProductDetails, SearchResults, Orders, CheckoutSuccess} from './pages';
 
 const App = () => {
 
@@ -21,6 +21,7 @@ const App = () => {
               <Route path="/Product/:asinToFind" element={<ProductDetails />} />
               <Route path="/Orders" element={<Orders />} />
               <Route path="/Search/:searchTerm" element={<SearchResults />} />
+              <Route path="/Checkout-Success" element={<CheckoutSuccess/>} /> 
             </Routes>
           </div>
         </div>
