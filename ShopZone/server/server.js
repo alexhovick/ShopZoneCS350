@@ -35,8 +35,9 @@ app.post('/create-checkout-session', async (req, res) => {
                 currency: item.product.currency, // Use the currency from the product data
                 product_data: {
                     name: item.product.product_title, // Use the product title from the product data
+                    images: [item.product.product_photo],
                 },
-                unit_amount: parseFloat(item.product.product_price.replace('$', '')) * 100, // Convert price to cents
+                unit_amount: Math.round(parseFloat(item.product.product_price.replace('$', '')) * 100), // Convert price to cents
             },
             quantity: item.quantity,
         };
