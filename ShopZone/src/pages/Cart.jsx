@@ -53,7 +53,7 @@ function Cart() {
     <div className="bg-black p-8 rounded-lg h-auto w-auto shadow-md flex flex-col  mt-4">
       <h2 className="font-bold text-4xl mb-6 text-white text-center">Shopping Cart</h2>
       {cartData.length === 0 ? (
-        <p className='text-white'>Your cart is empty.</p>
+        <p className='text-white text-center py-2 px-2 text-xl'>Your cart is empty.</p>
       ) : (
         <div className="bg-black text-white p-8 rounded-lg flex flex-col items-center justify-center">
           {cartData.map((item) => (
@@ -87,7 +87,7 @@ function Cart() {
           ))}
         </div>
       )}
-      <div className="flex flex-row items-center justify-center ml-[650px]">
+      <div className="flex flex-row items-center justify-center ml-[675px]">
   <Link to="/">
     <button className="bg-blue-600 text-white font-bold text-xl rounded-full px-9 py-4 hover:bg-blue-700 mr-40">
       Back to Store
