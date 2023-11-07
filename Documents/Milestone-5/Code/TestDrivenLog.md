@@ -1,4 +1,4 @@
-To do list:
+# To do list:
 
 1. As a shopper, I want to proceed to checkout from the cart.
    a. Review Stripe docs for creating a checkout session
