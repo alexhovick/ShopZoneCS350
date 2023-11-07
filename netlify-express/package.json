@@ -1,0 +1,28 @@
+{
+  "name": "netlify-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "he": "^1.2.0",
+    "mongoose": "^8.0.0",
+    "netlify": "^13.1.10",
+    "netlify-lambda": "^2.0.16",
+    "serverless-http": "^1.9.1",
+    "stripe": "^14.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "netlify deploy --prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "netlify-cli": "^17.0.1",
+    "netlify-lambda": "^2.0.16"
+  }
+}

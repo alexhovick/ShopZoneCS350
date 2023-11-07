@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {BsStarFill,BsStarHalf, BsStar}  from 'react-icons/bs';
+import {BsStarFill,BsStarHalf, BsStar, BsFillCartCheckFill}  from 'react-icons/bs';
 //import searchResults from '../assets/searchResults.json'
 
 import product_details from '../assets/product_details.json'
@@ -21,6 +21,8 @@ const ProductPage = ()=> {
   const {data: searchData} = useGetProductSearchQuery(asinToFind);
   const dispatch = useDispatch(); // Get the dispatch function from react-redux
   const [quantity, setQuantity] = useState(1);
+
+  const [showAddedToCart, setShowAddedToCart] = useState(false);
   if (isFetching) {
     console.log("fetching")
     return <Loader/>; // Display a loading indicator
@@ -48,7 +50,7 @@ const ProductPage = ()=> {
    const productDetails = detailsData?.data;
 
 
-  console.log("product to pass: "+product.asin);
+  console.log("product to pass: "+product?.asin);
   console.log("product price: "+product_price);
 
 
@@ -76,6 +78,11 @@ const ProductPage = ()=> {
     dispatch(addToCart({ product, quantity }));
     // Optionally, you can display a confirmation message here.\
     console.log(`Added to Cart: ${quantity} x ${product.asin}`);
+    setShowAddedToCart(true);
+    // Hide the pop-up after 3 seconds
+    setTimeout(() => {
+      setShowAddedToCart(false);
+    }, 1000); // 3000 milliseconds (3 seconds)
   };
 
   if (!product) {
@@ -165,7 +172,7 @@ const ProductPage = ()=> {
             </div>
           </div>
           <div className='flex items-center justify-end '>
-            <label className="block mb-2 text-white text-bold text-xl">
+            <label className=" flex block mb-2 text-white text-bold text-xl">
                 <div className="w-32 bg-black text-white font-bold rounded-lg p-2">
                   <div className="flex items-center justify-end ">
                   Quantity:&nbsp;
@@ -185,10 +192,20 @@ const ProductPage = ()=> {
                         Add to Cart
                       </button>
                     </Link >
-            
+                      
                   </div>
+
+
                 </div>
              </label>
+             
+          </div>
+          <div className='flex flex-row items-end justify-end mr-20'>
+            {showAddedToCart && (
+              <div className="text-lg font-bold text-green-600 flex items-center">
+                <BsFillCartCheckFill/> &nbsp; Added to Cart
+              </div>
+            )}
           </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import MiniProductCard from '../components/MiniProductCard';
 import { Link } from 'react-router-dom';
 import { BsTrash3 } from "react-icons/bs";
 import PayButton from '../components/PayButton';
-import { useEffect,useState } from 'react';
+//import { useEffect,useState } from 'react';
 
 
 function Cart() {
@@ -13,23 +13,23 @@ function Cart() {
   const dispatch = useDispatch();
 
 
-  const [serverCartData, setServerCartData] = useState([]); // Added state to hold server cart data
+  // const [serverCartData, setServerCartData] = useState([]); // Added state to hold server cart data
 
-  useEffect(() => { 
-    fetchServerCartData(); // Fetch server cart data when component mounts
-  }, []);
+  // useEffect(() => { 
+  //   fetchServerCartData(); // Fetch server cart data when component mounts
+  // }, []);
 
-  const fetchServerCartData = async () => {
-    try {
-      const response = await fetch('http://localhost:5500/create-checkout-session'); // Replace with your server's API endpoint
-      if (response.ok) {
-        const data = await response.json();
-        setServerCartData(data);
-      }
-    } catch (error) {
-      console.error('Error fetching server cart data:', error);
-    }
-  };
+  // const fetchServerCartData = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:5500/create-checkout-session'); // Replace with your server's API endpoint
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       setServerCartData(data);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error fetching server cart data:', error);
+  //   }
+  // };
 
 
   const handleQuantityChange = (item, newQuantity) => {

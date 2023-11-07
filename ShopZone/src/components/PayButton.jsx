@@ -6,7 +6,8 @@ import {url} from "../redux/features/api";
 const PayButton = ({cartItems}) => {
     console.log("stringed cart data: ",cartItems);
     const handleCheckOut = () => {
-        fetch('http://localhost:5500/create-checkout-session', {
+         fetch('https://shopzone-server.netlify.app/.netlify/functions/api', {
+          //fetch('https://shopzone-app.netlify.app/create-checkout-session', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
