@@ -23,7 +23,7 @@ const Home = () =>{
    //const {data, isFetching, error} = useGetProductsByGenreQuery(searchTerm, genreListId);
    const { data, isFetching, error } = useGetProductsByGenreQuery({ searchTerm, genreListId });
 
-   if(isFetching) return <Loader title="Loading Products"/>;
+   if(isFetching) return <Loader title="Loading Products..."/>;
 
    if (error) return <Error/>
   //const data = phone_search;

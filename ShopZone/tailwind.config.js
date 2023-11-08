@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const scrollbarHide = require('tailwind-scrollbar-hide');
+
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
@@ -40,7 +42,13 @@ module.exports = {
           '50%': { transform: 'scale(1)' },
           '100%': { transform: 'scale(0)' },
         },
+        scrollbarHide: {
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          }
+        }
       },
     },
   },
 };
+

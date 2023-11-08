@@ -27,7 +27,7 @@ const SearchBar = () => {
                 type="search"
                 value={searchTerm}
                 onChange={(e)=>setSearchTerm(e.target.value)}
-                className="flex bg-transparent rounded-full border-none outline-none placeholder-gray-500 text-base text-white p-4"
+                className="flex bg-transparent rounded-full border-none outline-none placeholder-gray-500 text-base text-white p-4 w-96"
             />
         </div>
     </form>
