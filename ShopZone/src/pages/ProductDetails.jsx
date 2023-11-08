@@ -30,7 +30,7 @@ const ProductPage = ()=> {
   };
 
   const [showAddedToCart, setShowAddedToCart] = useState(false);
-  
+
   if (isFetching) {
     console.log("fetching")
     return <Loader/>; // Display a loading indicator
@@ -155,7 +155,7 @@ const ProductPage = ()=> {
         <p className="text-xl font-semibold text-blue-500 mb-2">{product.product_description}</p>
          <div className='flex justify-end items-center'>
           </div>
-          <div className="text-white">
+          <div className="text-white mr-4">
             <h2 className="text-xl font-bold mb-2 text-white" role="about product">About This Product:</h2>
             {productDetails?.about_product.map((item, index) => (
               <p key={index} className="italic">
@@ -164,7 +164,7 @@ const ProductPage = ()=> {
             ))}
           </div>
           &nbsp;
-          <div className="text-white flex">
+          <div className="text-white flex mr-4">
   {productDetails?.product_information && Object.keys(productDetails.product_information).length > 0 ? (
     <>
       <div className="w-1/2 mr-1">
@@ -175,7 +175,7 @@ const ProductPage = ()=> {
           </div>
         ))}
       </div>
-      <div className="w-1/2 ml-1">
+      <div className="w-1/2 ml-1 mr-4">
         {Object.entries(productDetails.product_information).slice(Math.ceil(Object.keys(productDetails.product_information).length / 2)).map(([key, value]) => (
           <div key={key} className="product-info-item">
             <span className="font-bold">{key}: </span>
