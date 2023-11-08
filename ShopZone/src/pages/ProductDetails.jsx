@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 import { Loader, Error } from '../components';
 import { useGetProductDetailsQuery, useGetProductSearchQuery } from '../redux/services/AmazonApi';
 
+import product_reviews from "../assets/product_reviews.json"
+
 const ProductPage = ()=> {
   const { asinToFind } = useParams();
   //const data = searchResults;
@@ -21,6 +23,11 @@ const ProductPage = ()=> {
   const {data: searchData} = useGetProductSearchQuery(asinToFind);
   const dispatch = useDispatch(); // Get the dispatch function from react-redux
   const [quantity, setQuantity] = useState(1);
+  const [showReviews, setShowReviews] = useState(false);
+
+  const handleToggleReviews = () => {
+    setShowReviews(!showReviews); // Toggle the visibility of reviews
+  };
 
   const [showAddedToCart, setShowAddedToCart] = useState(false);
   if (isFetching) {
@@ -48,6 +55,9 @@ const ProductPage = ()=> {
    const product = searchData?.data?.products.find((item) => item.asin === asinToFind);
    const product_price = product?.product_price;
    const productDetails = detailsData?.data;
+
+
+   const reviews = product_reviews;
 
 
   console.log("product to pass: "+product?.asin);
@@ -86,7 +96,7 @@ const ProductPage = ()=> {
   };
 
   if (!product) {
-    return <div className="bg-black p-8 rounded-lg shadow-md flex items-center justify-center text-6xl text-red-600">Product not found</div>;
+    return <div className="bg-transparent/10 p-8 rounded-lg shadow-md flex items-center justify-center text-6xl text-red-600">Product not found</div>;
   }
 
   const renderStarRating = (rating) => {
@@ -129,11 +139,11 @@ const ProductPage = ()=> {
   const decodedTitle = decodeHTMLEntities(product.product_title);
 
   return (
-    <div className="bg-black p-8 rounded-lg shadow-md flex items-center mt-4">
-        <div className="mr-10 w-2/3 bg-transparent-300 flex items-center justify-center">
+    <div className="bg-transparent/20 p-8 rounded-lg shadow-md flex  mt-4 h-[800px] overflow-y-hidden">
+      <div className="mr-10 w-1/3 bg-transparent-300 flex items-center justify-center">
           <img className="object-contain" src={product.product_photo} alt={product.product_title} />
       </div>
-      <div>
+      <div className='overflow-y-auto h-full hide-scrollbar w-2/3'>
         <h2 className="text-4xl font-semibold mb-2 text-white text-bold flex">{decodedTitle}</h2>
         <div className="my-2"></div>
         <h2 className='text-white items-center flex text-xl'> {renderStarRating(product?.product_star_rating)} &nbsp; {product.product_num_ratings} </h2>  
@@ -153,27 +163,34 @@ const ProductPage = ()=> {
             ))}
           </div>
           &nbsp;
-          <div className="text-white flex">   {/* divide product information into two columns:*/}
-            <div className="w-1/2 mr-1"> {/* LEFT */}
-              {Object.entries(productDetails?.product_information).slice(0, Math.ceil(Object.keys(productDetails?.product_information).length / 2)).map(([key, value]) => (
-                <div key={key} className="product-info-item">
-                  <span className="font-bold">{key}: </span>
-                  <span className="italic">{value}</span>
-                </div>
-              ))}
-            </div>
-            <div className="w-1/2 ml-1">  {/* RIGHT */}
-                {Object.entries(productDetails?.product_information).slice(Math.ceil(Object.keys(productDetails?.product_information).length / 2)).map(([key, value]) => (
-                  <div key={key} className="product-info-item">
-                    <span className="font-bold">{key}: </span>
-                    <span className="italic">{value}</span>
-                  </div>
-                ))}
-            </div>
+          <div className="text-white flex">
+  {productDetails?.product_information && Object.keys(productDetails.product_information).length > 0 ? (
+    <>
+      <div className="w-1/2 mr-1">
+        {Object.entries(productDetails.product_information).slice(0, Math.ceil(Object.keys(productDetails.product_information).length / 2)).map(([key, value]) => (
+          <div key={key} className="product-info-item">
+            <span className="font-bold">{key}: </span>
+            <span className="italic">{value}</span>
           </div>
+        ))}
+      </div>
+      <div className="w-1/2 ml-1">
+        {Object.entries(productDetails.product_information).slice(Math.ceil(Object.keys(productDetails.product_information).length / 2)).map(([key, value]) => (
+          <div key={key} className="product-info-item">
+            <span className="font-bold">{key}: </span>
+            <span className="italic">{value}</span>
+          </div>
+        ))}
+      </div>
+    </>
+  ) : (
+    <p>No Product Information Available</p>
+  )}
+</div>
+
           <div className='flex items-center justify-end '>
             <label className=" flex block mb-2 text-white text-bold text-xl">
-                <div className="w-32 bg-black text-white font-bold rounded-lg p-2">
+                <div className="w-32  text-white font-bold rounded-lg p-2">
                   <div className="flex items-center justify-end ">
                   Quantity:&nbsp;
                     <button onClick={decrementQuantity} className="px-2 py-1 border border-gray-400 border-r-0 rounded-l" role="-">
@@ -200,13 +217,47 @@ const ProductPage = ()=> {
              </label>
              
           </div>
-          <div className='flex flex-row items-end justify-end mr-20'>
+          <div className='flex flex-row items-end justify-end mr-20 relative mt-4 mb-4'>
             {showAddedToCart && (
-              <div className="text-lg font-bold text-green-600 flex items-center">
+              <div className="text-lg font-bold text-green-600 flex items-center absolute right-0 ">
                 <BsFillCartCheckFill/> &nbsp; Added to Cart
               </div>
             )}
           </div>
+            <div className='bg-transparent flex flex-col'>
+            <button onClick={handleToggleReviews} className="bg-blue-600 text-white ml-4 px-4 py-2 rounded-lg hover:bg-blue-700">
+              {showReviews ? 'Hide Reviews' : 'Show Reviews'}
+            </button>
+            {showReviews && (
+            <div className="mt-4">
+              <h2 className="text-2xl text-white font-bold">Product Reviews:</h2>
+              {reviews.data.reviews.map((review, index) => (
+                <div key={review.review_id} className="text-white my-2 flex flex-wrap rounded-xl p-2 bg-gradient-to-r from-[#005f73] to-[#0a9396]">
+                  <div className="w-1/2">
+                    <div className='flex flex-row items-center'>
+                    <p>
+                      {review.review_author_avatar && ( 
+                        <img className="rounded-full w-8" src={review.review_author_avatar} alt={`Avatar of ${review.review_author}`} />
+                      )}
+                    </p>
+                      <p> &nbsp; {review.review_author}</p>
+                    </div>
+                    <p className='flex flex-row'> {renderStarRating(review.review_star_rating)} &nbsp; <strong>{review.review_title}</strong></p>  
+                    <p>{review.review_date}</p>
+                  </div>
+                  <div className="w-1/2">
+                    <br/>
+                    <p><strong>Verified Purchase:</strong> {review.is_verified_purchase ? 'Yes' : 'No'}</p>
+                    <p><strong>Review Link:</strong> <a href={review.review_link} target="_blank" rel="noopener noreferrer" className="text-white hover:underline hover:text-blue-900">Read on Amazon</a></p>
+                    <br/>
+                  </div>
+                  <p> <i>{review.review_comment}</i></p>
+                </div>
+              ))}
+            </div>
+          )}
+            </div>
+
       </div>
     </div>
   );

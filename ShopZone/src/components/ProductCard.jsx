@@ -8,18 +8,21 @@ const ProductCard = ({ item, i }) => {
   console.log(starval)
   const renderStarRating = (rating) => {
     const maxStars = 5;
+    const isHalfStar = rating % 1 !== 0;
+  
     const fullStars = Math.floor(rating);
     const emptyStars = maxStars - fullStars;
-
+  
     const stars = [];
   
     for (let i = 0; i < fullStars; i++) {
       stars.push(<BsStarFill key={`star-${i}`} />);
     }
   
-    // Check if the decimal part of the rating is greater than or equal to 0.5
-    if (rating % 1 >= 0.5) {
-      stars.push(<BsStarFill key="half-star" />);
+    // Render half star or change opacity if it's not a whole number
+    if (isHalfStar) {
+      // stars.push(<AiFillStar key="half-star" style={{ width: '50%' }} />);
+      stars.push(<BsStarHalf key = "half-star"/>)
     }
   
     for (let i = 0; i < emptyStars; i++) {
