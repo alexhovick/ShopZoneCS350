@@ -30,6 +30,8 @@ function Cart() {
     return total + price * item.quantity;
   }, 0);
 
+  const formattedSubtotal = subtotal.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
   return (
     <div className="bg-black p-8 rounded-lg h-auto w-auto shadow-md flex flex-col  mt-4">
       <h2 className="font-bold text-4xl mb-6 text-white text-center">Shopping Cart</h2>
@@ -61,7 +63,9 @@ function Cart() {
                   >
                     <BsTrash3/>
                   </button>
-                  <span className="text-white text-xl font-bold px-2 py-1 ml-40"> Total: ${(parseFloat(item.product.product_price.slice(1).replace(/[$,]/g, '')) * item.quantity).toFixed(2)}</span>
+                  <span className="text-white text-xl font-bold px-2 py-1 ml-40"> Total: {(parseFloat(item.product.product_price.slice(1).replace(/[$,]/g, '')) * item.quantity).toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+
+
                 </div>
               </div>
             </div>
@@ -74,7 +78,7 @@ function Cart() {
       Back to Store
     </button>
   </Link>
-  <span className="text-white text-2xl font-bold p-3 ml-80">Subtotal: ${subtotal.toFixed(2)}</span>
+  <span className="text-white text-2xl font-bold p-3 ml-80">Subtotal: {formattedSubtotal}</span>
 </div>
 
     <div className="bg-black text-white p- rounded-lg  flex flex-col items-end justify-end">
