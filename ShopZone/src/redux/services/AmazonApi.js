@@ -20,7 +20,7 @@ export const amazonDataApi = createApi({
     
     getProductSearch: builder.query({query: (searchTerm) => `/search?query=${searchTerm}`}),
 
-    getProductReviews: builder.query({query: (params) => '/product-reviews'}),
+    getProductReviews: builder.query({query: (params) => `/product-reviews?asin=${params}`}),
 
     getProductDetails: builder.query({query: (params) => `/product-details?asin=${params}&country=US`}),
     
@@ -33,7 +33,6 @@ export const {
   useGetProductOffersQuery,
   useGetProductsByGenreQuery,
   useGetProductSearchQuery,
-  
   useGetProductReviewsQuery,
   useGetProductDetailsQuery,
   useGetProductCategoryListQuery, 

@@ -9,9 +9,8 @@ import { useDispatch} from 'react-redux'; // Import useDispatch from react-redux
 import { addToCart } from '../redux/actions/cartActions';
 import { Link } from 'react-router-dom';
 import { Loader, Error } from '../components';
-import { useGetProductDetailsQuery, useGetProductSearchQuery } from '../redux/services/AmazonApi';
-
-import product_reviews from "../assets/product_reviews.json"
+import { useGetProductDetailsQuery, useGetProductReviewsQuery, useGetProductSearchQuery } from '../redux/services/AmazonApi';
+import "./scrollbar.css"
 
 const ProductPage = ()=> {
   const { asinToFind } = useParams();
@@ -21,6 +20,7 @@ const ProductPage = ()=> {
   //const {data} = 
   const {data: detailsData, isFetching, error}  = useGetProductDetailsQuery(asinToFind);
   const {data: searchData} = useGetProductSearchQuery(asinToFind);
+  const {data: reviews} = useGetProductReviewsQuery(asinToFind);
   const dispatch = useDispatch(); // Get the dispatch function from react-redux
   const [quantity, setQuantity] = useState(1);
   const [showReviews, setShowReviews] = useState(false);
@@ -57,7 +57,6 @@ const ProductPage = ()=> {
    const productDetails = detailsData?.data;
 
 
-   const reviews = product_reviews;
 
 
   console.log("product to pass: "+product?.asin);
@@ -143,7 +142,8 @@ const ProductPage = ()=> {
       <div className="mr-10 w-1/3 bg-transparent-300 flex items-center justify-center">
           <img className="object-contain" src={product.product_photo} alt={product.product_title} />
       </div>
-      <div className='overflow-y-auto h-full hide-scrollbar w-2/3'>
+      {/* hide-scrollbar */}
+      <div className='overflow-y-auto h-full  w-2/3 '>
         <h2 className="text-4xl font-semibold mb-2 text-white text-bold flex">{decodedTitle}</h2>
         <div className="my-2"></div>
         <h2 className='text-white items-center flex text-xl'> {renderStarRating(product?.product_star_rating)} &nbsp; {product.product_num_ratings} </h2>  
@@ -184,11 +184,11 @@ const ProductPage = ()=> {
       </div>
     </>
   ) : (
-    <p>No Product Information Available</p>
+    <p className='text-2xl'><i>No Product Information Available </i></p>
   )}
 </div>
 
-          <div className='flex items-center justify-end '>
+          <div className='flex items-center justify-end mr-4'>
             <label className=" flex block mb-2 text-white text-bold text-xl">
                 <div className="w-32  text-white font-bold rounded-lg p-2">
                   <div className="flex items-center justify-end ">
@@ -217,46 +217,54 @@ const ProductPage = ()=> {
              </label>
              
           </div>
-          <div className='flex flex-row items-end justify-end mr-20 relative mt-4 mb-4'>
+          <div className='flex flex-row items-end justify-end mr-20 relative mt-4 mb-4 mr'>
             {showAddedToCart && (
               <div className="text-lg font-bold text-green-600 flex items-center absolute right-0 ">
                 <BsFillCartCheckFill/> &nbsp; Added to Cart
               </div>
             )}
           </div>
-            <div className='bg-transparent flex flex-col'>
-            <button onClick={handleToggleReviews} className="bg-blue-600 text-white ml-4 px-4 py-2 rounded-lg hover:bg-blue-700">
-              {showReviews ? 'Hide Reviews' : 'Show Reviews'}
-            </button>
-            {showReviews && (
-            <div className="mt-4">
-              <h2 className="text-2xl text-white font-bold">Product Reviews:</h2>
-              {reviews.data.reviews.map((review, index) => (
-                <div key={review.review_id} className="text-white my-2 flex flex-wrap rounded-xl p-2 bg-gradient-to-r from-[#005f73] to-[#0a9396]">
-                  <div className="w-1/2">
-                    <div className='flex flex-row items-center'>
-                    <p>
-                      {review.review_author_avatar && ( 
-                        <img className="rounded-full w-8" src={review.review_author_avatar} alt={`Avatar of ${review.review_author}`} />
-                      )}
-                    </p>
-                      <p> &nbsp; {review.review_author}</p>
-                    </div>
-                    <p className='flex flex-row'> {renderStarRating(review.review_star_rating)} &nbsp; <strong>{review.review_title}</strong></p>  
-                    <p>{review.review_date}</p>
-                  </div>
-                  <div className="w-1/2">
-                    <br/>
-                    <p><strong>Verified Purchase:</strong> {review.is_verified_purchase ? 'Yes' : 'No'}</p>
-                    <p><strong>Review Link:</strong> <a href={review.review_link} target="_blank" rel="noopener noreferrer" className="text-white hover:underline hover:text-blue-900">Read on Amazon</a></p>
-                    <br/>
-                  </div>
-                  <p> <i>{review.review_comment}</i></p>
-                </div>
-              ))}
+          <div className='bg-transparent flex flex-col mr-4'>
+  <button onClick={handleToggleReviews} className="bg-blue-600 text-white ml-4 px-4 py-2 rounded-lg hover:bg-blue-700">
+    {showReviews ? 'Hide Reviews' : 'Show Reviews'}
+  </button>
+  {showReviews && (
+    <div className="mt-4">
+      <h2 className="text-2xl text-white font-bold">Product Reviews:</h2>
+      {reviews?.data?.reviews.length > 0 ? (
+        reviews?.data?.reviews.map((review, index) => (
+          <div key={review.review_id} className="text-white my-2 flex flex-wrap rounded-xl p-2 bg-gradient-to-r from-[#005f73] to-[#0a9396]">
+            <div className="w-1/2">
+              <div className='flex flex-row items-center'>
+                <p>
+                  {review.review_author_avatar && (
+                    <img className="rounded-full w-8" src={review.review_author_avatar} alt={`Avatar of ${review.review_author}`} />
+                  )}
+                </p>
+                <p> &nbsp; {review.review_author}</p>
+              </div>
+              <p className='flex flex-row'> {renderStarRating(review.review_star_rating)} &nbsp; <strong>{review.review_title}</strong></p>
+              <p>{review.review_date}</p>
             </div>
-          )}
+            <div className="w-1/2">
+              <br/>
+              <p><strong>Verified Purchase:</strong> {review.is_verified_purchase ? 'Yes' : 'No'}</p>
+              <p><strong>Review Link:</strong> <a href={review.review_link} target="_blank" rel="noopener noreferrer" className="text-white hover:underline hover:text-blue-900">Read on Amazon</a></p>
+              <br/>
             </div>
+            <p> <i>{review.review_comment}</i></p>
+          </div>
+        ))
+      ) : (
+        <div className='no-reviews'>
+            <br></br>
+            <p className='text-xl text-white'>  &nbsp;  &nbsp; <i>No Product Reviews</i></p>
+          </div>
+      )}
+    </div>
+  )}
+</div>
+
 
       </div>
     </div>
