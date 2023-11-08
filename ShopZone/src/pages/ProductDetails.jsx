@@ -139,7 +139,7 @@ const ProductPage = ()=> {
 
   return (
     <div className="bg-transparent/20 p-8 rounded-lg shadow-md flex  mt-4 h-[800px] overflow-y-hidden">
-      <div className="mr-10 w-1/3 bg-transparent-300 flex items-center justify-center">
+      <div className="mr-10 w-1/3 bg-transparent-300 flex items-center justify-center mr-4">
           <img className="object-contain" src={product.product_photo} alt={product.product_title} />
       </div>
       {/* hide-scrollbar */}
