@@ -30,6 +30,7 @@ const ProductPage = ()=> {
   };
 
   const [showAddedToCart, setShowAddedToCart] = useState(false);
+  
   if (isFetching) {
     console.log("fetching")
     return <Loader/>; // Display a loading indicator
