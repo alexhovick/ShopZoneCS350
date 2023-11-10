@@ -17,7 +17,7 @@ const SearchBar = () => {
   return (
     <form onSubmit={handleSubmit} autoComplete="off" className="p-2 text-gray-400 focus-within: text-gray-600">
         <label htmlFor="search-field" className="sr-only"> Search Products</label>
-        <div className="flex flex-row justify-start items-center">
+        <div className="flex flex-row justify-start items-center border-2 rounded-3xl border-cyan-800">
             <FiSearch className="w-6 h-6 ml-4"/>
             <input
                 name="search-field"
