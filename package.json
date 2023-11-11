@@ -10,11 +10,11 @@
     "devStart": "nodemon backend/server/server.js"
   },
   "dependencies": {
-    // ... other dependencies
+    
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
-    // ... other devDependencies
+    
     "cypress": "^13.3.1"
   }
 }
