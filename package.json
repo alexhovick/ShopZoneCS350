@@ -7,7 +7,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "cypress": "cypress open",
-    "devStart": "nodemon backend/server/server.js"
+    "devStart": "nodemon backend/server/server.js",
+    "deploy": "npm run dev",
+    "test": "npm run cypress"
+    
   },
   "dependencies": {
     
