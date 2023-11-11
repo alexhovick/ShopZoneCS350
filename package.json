@@ -1,0 +1,13 @@
+{
+  "name": "shopzonecs350-1",
+  "version": "1.0.0",
+  "description": "SOURCE CODE FOR SHOPZONE ( AN AMAZON BASED APP)  BY CS350-BackEnd Group",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress open"
+  },  
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
