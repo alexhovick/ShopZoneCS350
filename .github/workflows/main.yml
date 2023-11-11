@@ -6,7 +6,26 @@ on:
       - main
 
 jobs:
-  build:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start development server
+        run: npm run dev
+
+  cypress-test:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
@@ -22,10 +41,4 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: $(npm bin)/cypress run
-
-      - name: Upload Test Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: cypress-results
-          path: cypress/videos
+        run: npm run cypress
