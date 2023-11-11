@@ -22,5 +22,33 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run
-        working-directory: ShopZone
+        run: npm run cypress
+
+      - name: Upload Test Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-results
+          path: cypress/videos
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy to Staging
+        run: |
+          # Add deployment steps here
+          # Example: Deploy to a staging environment
+
+
