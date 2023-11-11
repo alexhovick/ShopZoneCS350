@@ -23,4 +23,4 @@ jobs:
 
       - name: Run Cypress tests
         run: npx cypress run
-        working-directory: ShopZone/cypress.config.js
+        working-directory: ShopZone
