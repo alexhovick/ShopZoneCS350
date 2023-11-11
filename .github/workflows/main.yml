@@ -5,27 +5,27 @@ on:
     branches:
       - main
 
-      jobs:
-        test:
-          runs-on: ubuntu-latest
+jobs:
+    test:
+      runs-on: ubuntu-latest
       
-          steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
       
-            - name: Set up Node.js
-              uses: actions/setup-node@v2
-              with:
-                node-version: 14
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: 14
       
-            - name: Install dependencies
-              run: npm install
-      
-            - name: Install Vite
-              run: npm install -g vite
-      
-            - name: Start development server
-              run: npm run dev
+        - name: Install dependencies
+          run: npm install
+  
+        - name: Install Vite
+          run: npm install -g vite
+  
+        - name: Start development server
+          run: npm run dev
       
 
   cypress-test:
