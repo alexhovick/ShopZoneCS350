@@ -1,10 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const register = require("../routes/register");
-const login = require("../routes/login");
-
-const products = require("./products");
+const register = require("./routes/register");
+const login = require("./routes/login");
 
 const app = express();
 
@@ -20,11 +18,7 @@ app.get("/", (req, res) => {
   res.send("Welcome our to online shop API...");
 });
 
-app.get("/products", (req, res) => {
-  res.send(products);
-});
 
-const uri = process.env.DB_URI;
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
@@ -33,6 +27,7 @@ app.listen(port, () => {
 
 
 //const connection_string = process.env.CONNECTION_STRING
+mongoose.set('strictQuery', false);
 const connection_string = "mongodb+srv://scuffedleaf:scuffedleaf1412@cluster0.l9tt2y9.mongodb.net/?retryWrites=true&w=majority"
 mongoose.connect(connection_string, {
 })

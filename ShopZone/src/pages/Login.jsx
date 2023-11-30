@@ -1,8 +1,8 @@
-import { LoginSignup } from "../components";
+import { LoginForm } from "../components";
 
 const Login = () => (
     <div>
-        <LoginSignup/>
+        <LoginForm/>
     </div>
 );
 

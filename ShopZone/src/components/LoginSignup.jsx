@@ -65,6 +65,8 @@ const LoginSignup = () => {
 
       <div className="forgot-password mt-7 text-white text-lg text-center">
         Forgot Password? <span className="text-cyan-500 cursor-pointer underline">Click Here</span>
+
+        
       </div>
 
       <div className="submit-container flex justify-center gap-16 mt-14">

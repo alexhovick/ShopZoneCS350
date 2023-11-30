@@ -3,8 +3,10 @@ import cartReducer from './reducers/cartReducer';
 import userReducer from './reducers/userReducer';
 import searchSlice from './features/searchSlice';
 
+
 import { amazonDataApi } from './services/AmazonApi';
-import authReducer from './slices/authSlice';
+import authReducer, { loadUser } from './slices/authSlice';
+import { useDispatch } from 'react-redux';
 
 export const store = configureStore({
   reducer: {
@@ -16,5 +18,7 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(amazonDataApi.middleware)
 });
+
+store.dispatch(loadUser(null));
 
 export default store;

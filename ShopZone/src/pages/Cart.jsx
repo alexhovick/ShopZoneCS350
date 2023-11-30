@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom';
 import { BsTrash3 } from "react-icons/bs";
 import PayButton from '../components/PayButton';
 import { clearCart } from '../redux/reducers/cartReducer';
-//import { useEffect,useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function Cart() {
   const cartData = useSelector((state) => state.cart);
+  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
 
   const handleQuantityChange = (item, newQuantity) => {
@@ -102,7 +104,8 @@ function Cart() {
 
     <div className="bg-black text-white p- rounded-lg  flex flex-col items-end justify-end">
       <p className="bg-blue-600 text-white font-bold text-xl rounded-full px-12 py-4 hover:bg-blue-700 mr-[145px]">
-        <PayButton cartItems={cartData}>Checkout</PayButton>
+        {auth._id ? <PayButton cartItems={cartData}>Checkout what!</PayButton>:
+        <PayButton className="bg-yellow"onClick={() => navigate("/login") } cartItems={cartData}>Login to Checkout</PayButton> }
       </p>
     </div>
     </div>

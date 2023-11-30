@@ -14,8 +14,6 @@ import { useGetProductSearchQuery, useGetProductsByGenreQuery } from "../redux/s
 const Home = () =>{
    const dispatch = useDispatch();
    const {genreListId, searchTerm} = useSelector((state) => state.search);
-   const auth = useSelector((state) => state.auth);
-   console.log(auth)
    //const genreListId = 'aps';
   //  let searchTerm = '';
   //  if (genreListId === 'aps'){

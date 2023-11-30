@@ -1,11 +1,20 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { useSelector, useDispatch } from 'react-redux/';
 
 import SZ_Logo from '../assets/SZ_Logo.png';
 import SearchBar from './SearchBar';
+// import Logout from './Logout';
+// import { logoutUser } from '../redux/slices/authSlice';
 
 const Header = () => {
+  const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+
+  const formatteduserName = auth.name.charAt(0).toUpperCase() + auth.name.slice(1).toLowerCase();
+
   return (
     <header className="bg-transparent/10 text-white py-4 w-full">
       <div className="container mx-auto flex justify-between items-center">
@@ -19,11 +28,28 @@ const Header = () => {
 
         <div className="flex items-center space-x-10"> {/* Grouping login, orders, and cart closer */}
           {/* Login Button - Takes you to the login page */}
-          <Link to="/login" className="text-xl hover:no-underline font-bold">
-            Hello, sign in  
-          </Link>
+          {/* <Link
+            to={auth._id ? "/logout" : "/register"} // Change the route based on authentication status
+            className="text-xl hover:no-underline font-bold text-white"
+          >
+            {auth._id ? `Hello, ${auth.name} ` : "Hello, Sign In"}
+            {auth._id ? "Logout?" : "Hello, Sign In"}
+          </Link> */}
+          <p className='font-bold text-white text-xl mr-[-30px]'>Hello, {formatteduserName}  |</p>
+          {auth._id ? (
+            <Link className='font-bold text-white text-xl hover:text-cyan-500 hover:underline' to="/login" onClick={() => dispatch(logoutUser(null))}>
+              <span className='italic'>Logout?</span>
+            </Link>
+          ) : (
+            <div className='flex flex-row'>
+              <Link to="/login" className="text-xl hover:underline hover:text-cyan-500 font-bold text-white">Login</Link>
+              <p className='font-bold text-white text-xl'>&nbsp; / &nbsp;</p>
+              
+              <Link to="/register" className="text-xl hover:underline hover:text-yellow-500  font-bold text-white">Register</Link>
+            </div>
+          )}
 
-          {/* Login Button - Takes you to the login page */}
+
           <Link to="/orders" className="text-xl hover:no-underline font-bold">
             Returns & Orders 
           </Link>

@@ -5,6 +5,9 @@ import Loader from './Loader'
 import SearchBar from './SearchBar';
 import LoginSignup from './LoginSignup';
 import MiniProductCard from './MiniProductCard';
+import Register from './Register';
+import Logout from './Logout';
+import LoginForm from './LoginForm';
 
 export {
   Header,
@@ -14,4 +17,7 @@ export {
   SearchBar,
   LoginSignup,
   MiniProductCard,
+  Register,
+  Logout,
+  LoginForm,
 };

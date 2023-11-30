@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
-import { Header } from './components';
-import { Cart, Checkout, Home, Login, ProductDetails, SearchResults, Orders, CheckoutSuccess} from './pages';
+import { Header, Register} from './components';
+import { Cart, Checkout, Home, ProductDetails, SearchResults, Orders, CheckoutSuccess, Login} from './pages';
 
 const App = () => {
 
@@ -17,6 +17,9 @@ const App = () => {
               <Route path="/Cart" element={<Cart />} />
               <Route path="/Checkout" element={<Checkout />} />
               <Route path="/Login" element={<Login />} />
+
+              <Route path="/Register" element={<Register />} />
+              
               <Route path="/Product/:asinToFind" element={<ProductDetails />} />
               <Route path="/Orders" element={<Orders />} />
               <Route path="/Search/:searchTerm" element={<SearchResults />} />
