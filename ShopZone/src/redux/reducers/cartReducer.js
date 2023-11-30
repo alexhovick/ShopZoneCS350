@@ -2,7 +2,14 @@
 
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = [];
+//const initialState = [];
+// Function to get cart items from localStorage
+const getCartItemsFromLocalStorage = () => {
+  const cartItemsFromLocalStorage = localStorage.getItem('cartItems');
+  return cartItemsFromLocalStorage ? JSON.parse(cartItemsFromLocalStorage) : [];
+};
+
+const initialState = getCartItemsFromLocalStorage(); // Set initial state from localStorage
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -21,11 +28,18 @@ const cartSlice = createSlice({
         const updatedState = [...state];
         updatedState[existingItemIndex] = updatedItem;
         console.log('Updated state:', updatedState);
+
+        // Update local storage
+        localStorage.setItem('cartItems', JSON.stringify(updatedState));
+
         return updatedState;
       } else {
         console.log('Adding a new item to cart.');
         const updatedState = [...state, newItem];
         console.log('Updated state:', updatedState);
+
+        // Update local storage
+        localStorage.setItem('cartItems', JSON.stringify(updatedState));
         return updatedState;
       }
     },
@@ -53,6 +67,7 @@ const cartSlice = createSlice({
       if (quantity === 0) {
         state.splice(itemIndex, 1);
       }
+      localStorage.setItem('cartItems', JSON.stringify(state));
     },
 
     // removeCartItem: (state, action) => {
@@ -67,11 +82,18 @@ const cartSlice = createSlice({
     removeCartItem: (state, action) => {
       const itemAsin = action.payload;
       const updatedState = state.filter((item) => item.product.asin !== itemAsin);
+
+      localStorage.setItem('cartItems', JSON.stringify(updatedState));
       return updatedState;
+    },
+    clearCart: () => {
+      // Clear the cart by returning an empty array and removing 'cartItems' from localStorage
+      localStorage.removeItem('cartItems');
+      return [];
     },
   },
 });
 
-export const { addToCart, updateCartItemQuantity, removeCartItem } = cartSlice.actions;
+export const { addToCart, updateCartItemQuantity, removeCartItem, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
 

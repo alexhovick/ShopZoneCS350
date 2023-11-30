@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
 import {BsStarFill,BsStarHalf, BsStar}  from 'react-icons/bs';
+import logo from '../assets/Logo.png'
 const ProductCard = ({ item, i }) => {
   const starval = parseFloat(item?.product_star_rating) ;
 
@@ -61,7 +61,7 @@ const ProductCard = ({ item, i }) => {
             {/* <p className='text-white text-bold'>{item.product_title} {item.product_price}</p> */}
             
           </div>
-          <img className='object-contain w-full h-full 'alt="product_img" src={item?.product_photo} />
+          <img className='object-contain w-full h-full 'alt="product_img" src={item?.product_photo || logo } />
           <div className='mt-4 flex flex-col '>
             <p className='text-white'> {decodedTitle} </p>
             <p className='text-white items-center flex'>{renderStarRating(item?.product_star_rating)} &nbsp; {item?.product_num_ratings}</p>

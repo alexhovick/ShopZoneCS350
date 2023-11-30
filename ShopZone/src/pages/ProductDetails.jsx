@@ -192,16 +192,22 @@ const ProductPage = ()=> {
           <div className='flex items-center justify-end mr-4'>
             <label className=" flex block mb-2 text-white text-bold text-xl">
                 <div className="w-32  text-white font-bold rounded-lg p-2">
-                  <div className="flex items-center justify-end ">
-                  Quantity:&nbsp;
-                    <button onClick={decrementQuantity} className="px-2 py-1 border border-gray-400 border-r-0 rounded-l" role="-">
-                      -
+                  <div className="flex items-center justify-end text-white text-xl font-bold ">
+                    
+                  Quantity&nbsp;
+                    <button onClick={decrementQuantity} className="px-2 py-1 border border-gray-400 border-r-1 rounded-l  hover:text-black hover:bg-white" role="minus">
+                    -
                     </button>
-                    <span className="px-2 py-1 border border-gray-400 border-l-0 border-r-0" role="quantity">{quantity}</span>
-                    <button onClick={incrementQuantity} className="px-2 py-1 border border-gray-400 border-l-0 rounded-r">
+
+                    <span className="px-4 py-1 border border-gray-400 border-l-0 border-r-0" role="quantity">{quantity}</span>
+
+                    <button onClick={incrementQuantity} className="px-2 py-1 border border-gray-400 border-l-1 rounded-r hover:text-black hover:bg-white " role='plus'>
                       +
                     </button>
+                    
+                  
                     &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <Link to="">
                       <button
                         onClick={handleAddToCart}

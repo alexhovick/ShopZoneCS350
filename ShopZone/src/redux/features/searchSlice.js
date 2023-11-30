@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     genreListId: 'aps',
-    searchTerm: 'Ghibli',
+    searchTerm: 'ghibli',
 };
 
 const searchSlice = createSlice ({
