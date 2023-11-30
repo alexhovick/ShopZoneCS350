@@ -14,7 +14,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit =  (e) => {
     e.preventDefault();
     dispatch(
       loginUser({
@@ -23,6 +23,18 @@ const LoginForm = () => {
       })
     );
   };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
+
+  if (auth.token) {
+    // Redirect to the desired page after successful login
+    navigate('/cart'); // Redirect to the home page or any other route
+  }
 
   return (
     <div className="container mx-auto mt-16 bg-transparent/20 p-6 flex flex-col rounded-lg items-center justify-center " style={{ maxWidth: '700px' }}>
@@ -62,8 +74,9 @@ const LoginForm = () => {
           className="submit bg-indigo-700 text-white w-52 h-16 flex items-center justify-center rounded-full text-lg font-semibold cursor-pointer"
           type="submit"
         >
-          <Link to="/">Login</Link>
+          <Link to="/cart">Login</Link>
         </button>
+        <input type="hidden" onKeyPress={handleKeyPress} />
 
         <div className="forgot-password mt-7 text-white text-lg text-center">
           Don't have an account? <Link to="/register" className="text-cyan-500 cursor-pointer underline">Register</Link>

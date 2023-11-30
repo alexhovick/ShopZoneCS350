@@ -5,15 +5,16 @@ import { useSelector, useDispatch } from 'react-redux/';
 
 import SZ_Logo from '../assets/SZ_Logo.png';
 import SearchBar from './SearchBar';
-// import Logout from './Logout';
-// import { logoutUser } from '../redux/slices/authSlice';
+import Logout from './Logout';
+import { logoutUser } from '../redux/slices/authSlice';
 
 const Header = () => {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
 
-  const formatteduserName = auth.name.charAt(0).toUpperCase() + auth.name.slice(1).toLowerCase();
+  const formattedUserName = auth._id ? (auth.name.charAt(0).toUpperCase() + auth.name.slice(1).toLowerCase()) : '';
+
 
   return (
     <header className="bg-transparent/10 text-white py-4 w-full">
@@ -35,7 +36,7 @@ const Header = () => {
             {auth._id ? `Hello, ${auth.name} ` : "Hello, Sign In"}
             {auth._id ? "Logout?" : "Hello, Sign In"}
           </Link> */}
-          <p className='font-bold text-white text-xl mr-[-30px]'>Hello, {formatteduserName}  |</p>
+          {auth._id ? <p className='font-bold text-white text-xl mr-[-30px]'>Hello, {formattedUserName}  |</p> : ""}
           {auth._id ? (
             <Link className='font-bold text-white text-xl hover:text-cyan-500 hover:underline' to="/login" onClick={() => dispatch(logoutUser(null))}>
               <span className='italic'>Logout?</span>
@@ -44,7 +45,6 @@ const Header = () => {
             <div className='flex flex-row'>
               <Link to="/login" className="text-xl hover:underline hover:text-cyan-500 font-bold text-white">Login</Link>
               <p className='font-bold text-white text-xl'>&nbsp; / &nbsp;</p>
-              
               <Link to="/register" className="text-xl hover:underline hover:text-yellow-500  font-bold text-white">Register</Link>
             </div>
           )}

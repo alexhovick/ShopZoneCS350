@@ -15,6 +15,8 @@ function Cart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  console.log(auth);
+
 
   const handleQuantityChange = (item, newQuantity) => {
     dispatch(updateCartItemQuantity({ asin: item.product.asin, quantity: newQuantity }));
@@ -102,12 +104,16 @@ function Cart() {
         <span className="text-white text-2xl font-bold p-3 ml-80">Subtotal: {formattedSubtotal}</span>
       </div>
 
-    <div className="bg-black text-white p- rounded-lg  flex flex-col items-end justify-end">
-      <p className="bg-blue-600 text-white font-bold text-xl rounded-full px-12 py-4 hover:bg-blue-700 mr-[145px]">
-        {auth._id ? <PayButton cartItems={cartData}>Checkout what!</PayButton>:
-        <PayButton className="bg-yellow"onClick={() => navigate("/login") } cartItems={cartData}>Login to Checkout</PayButton> }
-      </p>
-    </div>
+      <div className="bg-black text-white p- rounded-lg  flex flex-col items-end justify-end">
+        <p className="bg-blue-600 text-white font-bold text-xl rounded-full px-12 py-4 hover:bg-blue-700 mr-[145px]">
+          {auth._id !== "" && auth._id !== null ? (
+            <PayButton cartItems={cartData}>Checkout</PayButton>
+          ) : (
+            <PayButton className="bg-yellow" onClick={() => navigate("/login")}>Login to Checkout</PayButton>
+          )}
+        </p>
+      </div>
+
     </div>
     
   );
