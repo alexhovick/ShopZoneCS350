@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux/';
+import { FaRegCircleQuestion } from "react-icons/fa6";
+
 
 import SZ_Logo from '../assets/SZ_Logo.png';
 import SearchBar from './SearchBar';
@@ -58,6 +60,9 @@ const Header = () => {
           <Link to="/cart" className="hover:animate-slidedown flex items-center font-bold">
             <AiOutlineShoppingCart className='h-12 w-12' />
             Cart
+          </Link>
+          <Link to="/About" className="hover:animate-slidedown flex items-center font-bold">
+            <FaRegCircleQuestion className='h-8 w-8' />
           </Link>
         </div>
       </div>

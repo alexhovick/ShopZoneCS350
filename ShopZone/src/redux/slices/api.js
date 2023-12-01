@@ -1,1 +1,1 @@
-export const url =  "http://localhost:5000/api"
+export const url =  "https://shop-zone-cs-350.vercel.app/api"
