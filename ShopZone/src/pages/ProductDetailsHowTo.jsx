@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const ProductDetailsHowTo = () => {
   return (
-    <div className="bg-gray-900 min-h-screen flex justify-center items-center">
-      <div className="bg-gray-800 rounded-lg p-8 w-full md:w-[80%] lg:w-[60%] xl:w-[50%]">
+    <div className="bg-gray-900 min-h-screen flex justify-center items-center mt-5 rounded-3xl">
+      <div className="bg-gray-800 rounded-lg p-8 w-full md:w-[80%] lg:w-[60%] xl:w-[50%] mt-5 mb-5">
         <h2 className="text-4xl font-bold text-white mb-6 text-center">Product Details Feature Instructions</h2>
 
         {/* View Product Information */}

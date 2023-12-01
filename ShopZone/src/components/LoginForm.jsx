@@ -74,7 +74,10 @@ const LoginForm = () => {
           className="submit bg-indigo-700 text-white w-52 h-16 flex items-center justify-center rounded-full text-lg font-semibold cursor-pointer"
           type="submit"
         >
+          Login
+          {auth._id ? (
           <Link to="/cart">Login</Link>
+        ) : (null)}
         </button>
         <input type="hidden" onKeyPress={handleKeyPress} />
 
