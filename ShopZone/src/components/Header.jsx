@@ -39,7 +39,7 @@ const Header = () => {
           {auth._id ? <p className='font-bold text-white text-xl mr-[-30px]'>Hello, {formattedUserName}  |</p> : ""}
           {auth._id ? (
             <Link className='font-bold text-white text-xl hover:text-cyan-500 hover:underline' to="/login" onClick={() => dispatch(logoutUser(null))}>
-              <span className='italic'>Logout?</span>
+              Log out?
             </Link>
           ) : (
             <div className='flex flex-row'>
@@ -51,7 +51,7 @@ const Header = () => {
 
 
           <Link to="/orders" className="text-xl hover:no-underline font-bold">
-            Returns & Orders 
+            Orders 
           </Link>
 
           {/* Cart Link */}
