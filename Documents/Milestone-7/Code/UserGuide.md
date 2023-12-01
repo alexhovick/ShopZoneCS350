@@ -14,7 +14,6 @@ Welcome to the user guide for Release 1.0 of Shopzone! This guide aims to provid
   - [Product Details](#product-details)
   - [Cart Functionality](#cart-functionality)
   - [Checkout Process](#checkout-process)
-  - [Login and Registration](#login-and-registration)
 
 ---
 
