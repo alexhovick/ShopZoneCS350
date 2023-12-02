@@ -93,7 +93,7 @@ function Cart() {
       <div className="flex flex-row items-center justify-center ml-[475px]">
         
         <Link to="/">
-          <button className="bg-blue-600 text-white font-bold text-xl rounded-full px-9 py-4 hover:bg-blue-700 mr-40">
+          <button className="bg-blue-600 text-white font-bold text-xl rounded-full px-9 py-4 hover:bg-blue-800 mr-40">
             Back to Store
           </button>
           
@@ -105,11 +105,11 @@ function Cart() {
       </div>
 
       <div className="bg-black text-white p- rounded-lg  flex flex-col items-end justify-end">
-        <p className="bg-blue-600 text-white font-bold text-xl rounded-full px-12 py-4 hover:bg-blue-700 mr-[145px]">
+        <p className="bg-yellow-600 text-white font-bold text-xl rounded-full px-12 py-4 hover:bg-blue-700 mr-[145px]">
           {auth._id !== "" && auth._id !== null ? (
             <PayButton cartItems={cartData}>Checkout</PayButton>
           ) : (
-            <PayButton className="bg-yellow" onClick={() => navigate("/login")}>Login to Checkout</PayButton>
+            <PayButton  onClick={() => navigate("/login")}>Login to Checkout</PayButton>
           )}
         </p>
       </div>
